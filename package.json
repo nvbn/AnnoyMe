@@ -12,6 +12,7 @@
     "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-native": "0.59.1",
+    "react-native-floating-action": "^1.14.2",
     "react-native-gesture-handler": "^1.1.0",
     "react-native-push-notification": "^3.1.2",
     "react-native-queue": "^1.2.1",
@@ -19,7 +20,8 @@
     "react-navigation": "^3.6.1",
     "react-navigation-header-buttons": "^2.2.0",
     "react-redux": "^6.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Text, View, TextInput } from "react-native";
+import { View } from "react-native";
 import NumberSettingsInput from "./NumberSettingsInput";
 import styles from "./styles";
 

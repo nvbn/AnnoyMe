@@ -1,11 +1,21 @@
-import React, { PureComponent } from "react";
-import { Text, View } from "react-native";
+import React, { PureComponent, createRef } from "react";
+import { ScrollView } from "react-native";
+import { NavigationScreenProps } from "react-navigation";
 import HeaderButtons from "react-navigation-header-buttons";
+import { FloatingAction } from "react-native-floating-action";
+import * as colors from "../../colors";
 import * as routes from "../../routes";
+import { Annoy } from "../../types";
 import HeaderButton from "../HeaderButton";
+import Item from "./Item";
+import styles from "./styles";
 
-export default class IndexScreen extends PureComponent {
-  static navigationOptions = ({ navigation }) => ({
+interface Props extends NavigationScreenProps {
+  annoys: Array<Annoy>;
+}
+
+export default class IndexScreen extends PureComponent<Props> {
+  static navigationOptions = ({ navigation }: NavigationScreenProps) => ({
     title: "AnnoyMe!",
     headerRight: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
@@ -18,11 +28,28 @@ export default class IndexScreen extends PureComponent {
     ),
   });
 
+  private floatingActionRef: any;
+
+  onActionClick = () => {
+    this.props.navigation.navigate(routes.create);
+
+    setTimeout(this.floatingActionRef.reset, 500);
+  };
+
   render() {
     return (
-      <View>
-        <Text>View screen!!</Text>
-      </View>
+      <ScrollView contentContainerStyle={styles.container}>
+        {this.props.annoys.map(annoy => (
+          <Item item={annoy} key={`annoy-item-${annoy.id}`} />
+        ))}
+        <FloatingAction
+          position="right"
+          color={colors.green400}
+          showBackground={false}
+          onPressMain={this.onActionClick}
+          ref={ref => (this.floatingActionRef = ref)}
+        />
+      </ScrollView>
     );
   }
 }

@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import * as colors from "../../colors";
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 20,
     justifyContent: "flex-start",
   },
   inputContainer: {
@@ -16,9 +17,9 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
   },
   inputValid: {
-    borderBottomColor: "#e8f5e9",
+    borderBottomColor: colors.green200,
   },
   inputInvalid: {
-    borderBottomColor: "#f44336",
+    borderBottomColor: colors.red500,
   },
 });
