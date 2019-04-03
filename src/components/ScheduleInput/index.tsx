@@ -84,7 +84,7 @@ export default class ScheduleInput extends PureComponent<Props> {
             <TouchableOpacity
               key={`week-day-label-${n}`}
               style={[styles.scheduleInputBox, styles.scheduleInputLabelBox]}
-              onPress={e => this.toggleWeekDay(n)}
+              onPress={_ => this.toggleWeekDay(n)}
             >
               <Text style={styles.scheduleInputLabel}>{weekDay}</Text>
             </TouchableOpacity>
@@ -94,11 +94,11 @@ export default class ScheduleInput extends PureComponent<Props> {
           <View key={`hour-label-${hour}`} style={styles.scheduleInputLine}>
             <TouchableOpacity
               style={[styles.scheduleInputBox, styles.scheduleInputLabelBox]}
-              onPress={e => this.toggleHour(hour)}
+              onPress={_ => this.toggleHour(hour)}
             >
               <Text style={styles.scheduleInputLabel}>{hour}</Text>
             </TouchableOpacity>
-            {weekdayRange.map((weekDay, n) => (
+            {weekdayRange.map((_, n) => (
               <TouchableOpacity
                 key={`hour-week-day-${hour}-${n}`}
                 style={[
@@ -107,7 +107,7 @@ export default class ScheduleInput extends PureComponent<Props> {
                     ? styles.scheduleInputBoxSelected
                     : styles.scheduleInputBoxNotSelected,
                 ]}
-                onPress={e => this.toggle(n, hour)}
+                onPress={_ => this.toggle(n, hour)}
               >
                 <View />
               </TouchableOpacity>

@@ -1,4 +1,4 @@
-import React, { PureComponent, createRef } from "react";
+import React, { PureComponent } from "react";
 import { ScrollView } from "react-native";
 import { NavigationScreenProps } from "react-navigation";
 import HeaderButtons from "react-navigation-header-buttons";

@@ -2,7 +2,11 @@ import { bindActionCreators, Dispatch, AnyAction } from "redux";
 import { connect } from "react-redux";
 import { NavigationScreenProps } from "react-navigation";
 import { find } from "lodash";
-import { updateAnnoy, deleteAnnoy } from "../store/annoys/actions";
+import {
+  updateAnnoy,
+  deleteAnnoy,
+  refreshIsActive,
+} from "../store/annoys/actions";
 import { State } from "../store";
 import EditScreen from "../components/EditScreen";
 
@@ -16,7 +20,7 @@ const mapStateToProps = (
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
-  bindActionCreators({ updateAnnoy, deleteAnnoy }, dispatch);
+  bindActionCreators({ updateAnnoy, deleteAnnoy, refreshIsActive }, dispatch);
 
 export default connect(
   mapStateToProps,

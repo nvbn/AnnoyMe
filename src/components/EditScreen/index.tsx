@@ -16,6 +16,7 @@ interface Props extends NavigationScreenProps {
 
   updateAnnoy: (annoy: Annoy) => void;
   deleteAnnoy: (id: string) => void;
+  refreshIsActive: (date: Date) => void;
 }
 
 interface State {
@@ -72,6 +73,8 @@ export default class EditScreen extends PureComponent<Props> {
       ...this.props.annoy,
       schedule,
     });
+
+    this.props.refreshIsActive(new Date());
   };
 
   render() {
