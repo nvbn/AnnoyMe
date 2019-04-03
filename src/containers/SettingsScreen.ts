@@ -1,4 +1,4 @@
-import { bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch, AnyAction } from "redux";
 import { connect } from "react-redux";
 import {
   setStartHour,
@@ -14,7 +14,7 @@ const mapStateToProps = (state: State) => ({
   frequency: state.settings.frequency,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators(
     {
       setStartHour,

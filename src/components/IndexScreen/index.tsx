@@ -40,7 +40,15 @@ export default class IndexScreen extends PureComponent<Props> {
     return (
       <ScrollView contentContainerStyle={styles.container}>
         {this.props.annoys.map(annoy => (
-          <Item item={annoy} key={`annoy-item-${annoy.id}`} />
+          <Item
+            item={annoy}
+            key={`annoy-item-${annoy.id}`}
+            onPress={() =>
+              this.props.navigation.navigate(routes.edit, {
+                id: annoy.id,
+              })
+            }
+          />
         ))}
         <FloatingAction
           position="right"

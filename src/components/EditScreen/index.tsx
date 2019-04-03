@@ -1,9 +1,8 @@
 import React, { PureComponent } from "react";
-import { View, TextInput } from "react-native";
+import { View, TextInput, Alert } from "react-native";
 import { NavigationScreenProps } from "react-navigation";
 import { FloatingAction } from "react-native-floating-action";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import uuidv4 from "uuid/v4";
 import * as colors from "../../colors";
 import * as routes from "../../routes";
 import { Annoy, AnnoySchedule } from "../../types";
@@ -13,50 +12,61 @@ import styles from "./styles";
 interface Props extends NavigationScreenProps {
   startHour: number;
   endHour: number;
+  annoy?: Annoy;
 
-  createAnnoy: (annoy: Annoy) => void;
+  updateAnnoy: (annoy: Annoy) => void;
+  deleteAnnoy: (id: string) => void;
 }
 
 interface State {
-  id: string;
-  title: string;
   isTitleValid: boolean;
-  schedule: AnnoySchedule;
 }
 
-export default class CreateScreen extends PureComponent<Props> {
+export default class EditScreen extends PureComponent<Props> {
   static navigationOptions = {
-    title: "Create a new annoyance",
+    title: "Change the annoyance",
   };
 
   readonly state: State = {
-    id: uuidv4(),
-    title: "",
-    isTitleValid: false,
-    schedule: {},
+    isTitleValid: true,
   };
 
-  onSaveClicked = () => {
-    this.props.createAnnoy({
-      id: this.state.id,
-      title: this.state.title,
-      schedule: this.state.schedule,
-      isActiveNow: false,
-    });
+  onDeleteClick = () => {
+    if (!this.props.annoy) return;
 
-    this.props.navigation.goBack();
+    this.props.navigation.navigate(routes.index);
+
+    this.props.deleteAnnoy(this.props.annoy.id);
   };
 
   onTitleChange = (title: string) => {
     const isTitleValid = title.length > 0;
 
-    this.setState({
-      title,
-      isTitleValid,
+    this.setState({ isTitleValid });
+
+    if (this.props.annoy && isTitleValid) {
+      this.props.updateAnnoy({
+        ...this.props.annoy,
+        title,
+      });
+    }
+  };
+
+  onScheduleChange = (schedule: AnnoySchedule) => {
+    if (!this.props.annoy) return;
+
+    this.props.updateAnnoy({
+      ...this.props.annoy,
+      schedule,
     });
   };
 
   render() {
+    if (!this.props.annoy) {
+      // When it's already deletd
+      return <View />;
+    }
+
     return (
       <View style={styles.container}>
         <TextInput
@@ -65,21 +75,22 @@ export default class CreateScreen extends PureComponent<Props> {
             this.state.isTitleValid ? styles.inputValid : styles.inputInvalid,
           ]}
           placeholder="Name of the annoyance"
+          defaultValue={this.props.annoy.title}
           onChangeText={this.onTitleChange}
         />
         <ScheduleInput
           startHour={this.props.startHour}
           endHour={this.props.endHour}
-          onChange={schedule => this.setState({ schedule })}
-          schedule={this.state.schedule}
+          onChange={this.onScheduleChange}
+          schedule={this.props.annoy.schedule}
         />
         {this.state.isTitleValid === true && (
           <FloatingAction
             position="right"
-            color={colors.green400}
+            color={colors.red400}
             showBackground={false}
-            onPressMain={this.onSaveClicked}
-            floatingIcon={<Icon name="save" size={25} color="white" />}
+            onPressMain={this.onDeleteClick}
+            floatingIcon={<Icon name="delete" size={25} color="white" />}
           />
         )}
       </View>

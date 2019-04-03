@@ -1,19 +1,21 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import { Annoy } from "../../types";
 import styles from "./styles";
 
 interface Props {
   item: Annoy;
+  onPress: () => void;
 }
 
-export default ({ item }: Props) => (
-  <View
+export default ({ item, onPress }: Props) => (
+  <TouchableOpacity
     style={[
       styles.itemContainer,
       item.isActiveNow ? styles.itemActive : styles.itemInactive,
     ]}
+    onPress={onPress}
   >
     <Text style={styles.itemTitle}>{item.title}</Text>
-  </View>
+  </TouchableOpacity>
 );

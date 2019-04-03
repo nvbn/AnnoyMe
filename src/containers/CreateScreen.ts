@@ -1,4 +1,4 @@
-import { bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch, AnyAction } from "redux";
 import { connect } from "react-redux";
 import { createAnnoy } from "../store/annoys/actions";
 import { State } from "../store";
@@ -9,7 +9,7 @@ const mapStateToProps = (state: State) => ({
   endHour: state.settings.endHour,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators({ createAnnoy }, dispatch);
 
 export default connect(
