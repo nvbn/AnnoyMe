@@ -1,34 +1,19 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import Navigator from "./containers/Navigator";
-import store from "./store";
-import { refreshIsActive } from "./store/annoys/actions";
-import * as constants from "./constants";
+import Refresher from "./containers/Refresher";
+import { store, persistor } from "./store";
 
 export default class App extends Component {
-  private refreshIntervalId?: number;
-
-  refresh = () => store.dispatch(refreshIsActive(new Date()));
-
-  componentDidMount() {
-    this.refresh();
-
-    this.refreshIntervalId = window.setInterval(
-      this.refresh,
-      constants.REFRESH_INTERVAL,
-    );
-  }
-
-  componentWillUnmount() {
-    if (this.refreshIntervalId) {
-      window.clearInterval(this.refreshIntervalId);
-    }
-  }
-
   render() {
     return (
       <Provider store={store}>
-        <Navigator />
+        <PersistGate loading={null} persistor={persistor}>
+          <Refresher>
+            <Navigator />
+          </Refresher>
+        </PersistGate>
       </Provider>
     );
   }
