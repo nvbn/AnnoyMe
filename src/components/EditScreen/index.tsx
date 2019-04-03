@@ -31,12 +31,25 @@ export default class EditScreen extends PureComponent<Props> {
     isTitleValid: true,
   };
 
+  removeAnnoyance = () => {
+    if (!this.props.annoy) return;
+
+    this.props.deleteAnnoy(this.props.annoy.id);
+
+    this.props.navigation.navigate(routes.index);
+  };
+
   onDeleteClick = () => {
     if (!this.props.annoy) return;
 
-    this.props.navigation.navigate(routes.index);
-
-    this.props.deleteAnnoy(this.props.annoy.id);
+    Alert.alert(
+      "Remove the annoyance",
+      `Are you sure want to remove "${this.props.annoy.title}"?`,
+      [
+        { text: "Yes", onPress: this.removeAnnoyance, style: "destructive" },
+        { text: "No", style: "cancel" },
+      ],
+    );
   };
 
   onTitleChange = (title: string) => {
