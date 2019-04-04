@@ -8,10 +8,15 @@ export interface AnnoySchedule {
 
 export interface Annoy {
   id: string;
+  created: Date;
   title: string;
   schedule: AnnoySchedule;
 }
 
 export interface ActiveAnnoys {
   [id: string]: boolean;
+}
+
+export interface AnnoyItems {
+  [id: string]: Annoy;
 }

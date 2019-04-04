@@ -1,5 +1,4 @@
-import { findIndex, fromPairs } from "lodash";
-import { Annoy } from "../../types";
+import { omit, fromPairs } from "lodash";
 import { isAnnoyActive } from "../../utils";
 import * as constants from "../../constants";
 import {
@@ -16,34 +15,34 @@ const initialState: Annoys = {
   active: {},
 };
 
-const filterOutId = (items: Array<Annoy>, idToRemove: string): Array<Annoy> =>
-  items.filter(({ id }) => id !== idToRemove);
-
 export default (state = initialState, action: AnnoysActionTypes): Annoys => {
   switch (action.type) {
     case CREATE_ANNOY:
       return {
         ...state,
-        items: [action.annoy, ...filterOutId(state.items, action.annoy.id)],
+        items: {
+          ...state.items,
+          [action.annoy.id]: action.annoy,
+        },
       };
     case UPDATE_ANNOY:
-      const items = [...state.items];
-      const index = findIndex(items, ({ id }) => id === action.annoy.id);
-      items[index] = action.annoy;
       return {
         ...state,
-        items,
+        items: {
+          ...state.items,
+          [action.annoy.id]: action.annoy,
+        },
       };
     case DELETE_ANNOY:
       return {
         ...state,
-        items: [...filterOutId(state.items, action.id)],
+        items: omit(state.items, action.id),
       };
     case REFRESH_IS_ACTIVE:
       return {
         ...state,
         active: fromPairs(
-          state.items.map(annoy => [
+          Object.values(state.items).map(annoy => [
             annoy.id,
             isAnnoyActive(annoy, action.time),
           ]),

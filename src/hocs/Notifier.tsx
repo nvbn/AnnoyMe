@@ -1,11 +1,11 @@
 import { Component, ReactNode } from "react";
 import PushNotification from "react-native-push-notification";
-import { Annoy } from "../types";
+import { AnnoyItems } from "../types";
 
 type Props = {
   children: ReactNode;
 
-  annoys: Array<Annoy>;
+  annoys: AnnoyItems;
   frequency: number;
 
   refreshIsActive: (date: Date) => void;

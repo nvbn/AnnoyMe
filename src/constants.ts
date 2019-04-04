@@ -1,4 +1,4 @@
-import { Annoy } from "./types";
+import { AnnoyItems } from "./types";
 
 export const REFRESH_INTERVAL = 30000; // miliseconds
 
@@ -8,9 +8,10 @@ export const DEFAULT_END_HOUR = 24;
 
 export const DEFAULT_FREQUENCY = 10; // minutes
 
-export const DEFAULT_ANNOYS: Array<Annoy> = [
-  {
+export const DEFAULT_ANNOYS: AnnoyItems = {
+  "default-0": {
     id: "default-0",
+    created: new Date(),
     schedule: {
       1: { 12: true, 13: true },
       2: { 12: true, 13: true },
@@ -20,16 +21,18 @@ export const DEFAULT_ANNOYS: Array<Annoy> = [
     },
     title: "Grab a fruit after lunch",
   },
-  {
+  "default-1": {
     id: "default-1",
+    created: new Date(),
     schedule: {
       6: { 10: true, 11: true },
       7: { 10: true, 11: true },
     },
     title: "Go run in the park",
   },
-  {
+  "default-2": {
     id: "default-2",
+    created: new Date(),
     schedule: {
       1: { 21: true, 22: true, 23: true },
       2: { 21: true, 22: true, 23: true },
@@ -39,4 +42,4 @@ export const DEFAULT_ANNOYS: Array<Annoy> = [
     },
     title: "Read a book",
   },
-];
+};

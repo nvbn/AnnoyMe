@@ -1,11 +1,11 @@
-import { Annoy } from "../../types";
+import { Annoy, AnnoyItems } from "../../types";
 
 export interface ActiveAnnoys {
   [id: string]: boolean;
 }
 
 export interface Annoys {
-  items: Array<Annoy>;
+  items: AnnoyItems;
   active: ActiveAnnoys;
 }
 

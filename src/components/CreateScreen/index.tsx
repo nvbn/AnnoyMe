@@ -40,6 +40,7 @@ export default class CreateScreen extends PureComponent<Props> {
   onSaveClicked = () => {
     this.props.createAnnoy({
       id: this.state.id,
+      created: new Date(),
       title: this.state.title,
       schedule: this.state.schedule,
     });
