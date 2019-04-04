@@ -2,6 +2,8 @@ import { AnnoyItems } from "./types";
 
 export const REFRESH_INTERVAL = 30000; // miliseconds
 
+export const SCHEDULE_NOTIFICATIONS = 7; // days
+
 export const DEFAULT_START_HOUR = 8;
 
 export const DEFAULT_END_HOUR = 24;
