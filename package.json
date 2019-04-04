@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "rn-menu": "adb shell input keyevent KEYCODE_MENU"
   },
   "dependencies": {
     "date-fns": "^1.30.1",

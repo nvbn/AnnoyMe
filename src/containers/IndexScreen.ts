@@ -8,8 +8,10 @@ const mapStateToProps = (
   state: State,
   { navigation }: NavigationScreenProps,
 ) => ({
-  annoys: state.annoys.items,
   navigation: navigation,
+
+  annoys: state.annoys.items,
+  activeAnnoys: state.annoys.active,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>

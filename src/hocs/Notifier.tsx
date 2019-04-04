@@ -14,13 +14,11 @@ type Props = {
 export default class Notifier extends Component<Props> {
   componentDidMount() {
     PushNotification.configure({});
-
-    for (const annoy of this.props.annoys) {
-      if (annoy.isActiveNow) {
-        PushNotification.localNotification({ message: annoy.title });
-      }
-    }
   }
+
+  componentDidUpdate() {}
+
+  rescheduleNotifications() {}
 
   render() {
     return this.props.children;

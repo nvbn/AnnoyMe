@@ -1,7 +1,12 @@
 import { Annoy } from "../../types";
 
+export interface ActiveAnnoys {
+  [id: string]: boolean;
+}
+
 export interface Annoys {
   items: Array<Annoy>;
+  active: ActiveAnnoys;
 }
 
 export const CREATE_ANNOY = "CREATE_ANNOY";

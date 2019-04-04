@@ -5,14 +5,16 @@ import styles from "./styles";
 
 interface Props {
   item: Annoy;
+  isActive: boolean;
+
   onPress: () => void;
 }
 
-export default ({ item, onPress }: Props) => (
+export default ({ item, isActive, onPress }: Props) => (
   <TouchableOpacity
     style={[
       styles.itemContainer,
-      item.isActiveNow ? styles.itemActive : styles.itemInactive,
+      isActive ? styles.itemActive : styles.itemInactive,
     ]}
     onPress={onPress}
   >

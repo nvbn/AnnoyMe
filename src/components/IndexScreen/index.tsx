@@ -5,13 +5,14 @@ import HeaderButtons from "react-navigation-header-buttons";
 import { FloatingAction } from "react-native-floating-action";
 import * as colors from "../../colors";
 import * as routes from "../../routes";
-import { Annoy } from "../../types";
+import { Annoy, ActiveAnnoys } from "../../types";
 import HeaderButton from "../HeaderButton";
 import Item from "./Item";
 import styles from "./styles";
 
 interface Props extends NavigationScreenProps {
   annoys: Array<Annoy>;
+  activeAnnoys: ActiveAnnoys;
 }
 
 export default class IndexScreen extends PureComponent<Props> {
@@ -42,6 +43,7 @@ export default class IndexScreen extends PureComponent<Props> {
         {this.props.annoys.map(annoy => (
           <Item
             item={annoy}
+            isActive={this.props.activeAnnoys[annoy.id]}
             key={`annoy-item-${annoy.id}`}
             onPress={() =>
               this.props.navigation.navigate(routes.edit, {

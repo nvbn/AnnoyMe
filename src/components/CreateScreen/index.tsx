@@ -42,7 +42,6 @@ export default class CreateScreen extends PureComponent<Props> {
       id: this.state.id,
       title: this.state.title,
       schedule: this.state.schedule,
-      isActiveNow: false,
     });
 
     this.props.refreshIsActive(new Date());

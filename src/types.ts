@@ -10,5 +10,8 @@ export interface Annoy {
   id: string;
   title: string;
   schedule: AnnoySchedule;
-  isActiveNow: boolean;
+}
+
+export interface ActiveAnnoys {
+  [id: string]: boolean;
 }
