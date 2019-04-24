@@ -5,11 +5,9 @@ import { refreshIsActive } from "../store/annoys/actions";
 import { State } from "../store";
 import Refresher from "../hocs/Refresher";
 
-type OwnProps = {
-  children: ReactNode;
-};
-
-const mapStateToProps = (_: State, { children }: OwnProps) => ({ children });
+const mapStateToProps = (_: State, { children }: { children: ReactNode }) => ({
+  children,
+});
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators({ refreshIsActive }, dispatch);

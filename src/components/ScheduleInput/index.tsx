@@ -13,6 +13,9 @@ interface Props {
   onChange: (schedule: AnnoySchedule) => void;
 }
 
+/**
+ * Fancy controll for modifying schedule of annoy.
+ */
 export default class ScheduleInput extends PureComponent<Props> {
   isSelected = (weekDayNumber: number, hour: number) => {
     const hours = this.props.schedule[weekDayNumber + 1];

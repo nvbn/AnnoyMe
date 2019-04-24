@@ -34,7 +34,7 @@ export const REFRESH_IS_ACTIVE = "REFRESH_IS_ACTIVE";
 
 interface RefreshIsActiveAction {
   type: typeof REFRESH_IS_ACTIVE;
-  time: Date;
+  active: Array<string>;
 }
 
 export type AnnoysActionTypes =

@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { View } from "react-native";
+import * as constants from "../../constants";
 import NumberSettingsInput from "./NumberSettingsInput";
 import styles from "./styles";
 
@@ -32,7 +33,8 @@ export default class SettingsScreen extends PureComponent<Props, State> {
 
   isValidHour = (hour: number) => hour >= 0 && hour <= 24;
 
-  isValidFrequency = (minutes: number) => minutes >= 5 && minutes <= 120;
+  isValidFrequency = (minutes: number) =>
+    minutes >= constants.MIN_FREQUENCY && minutes <= 120;
 
   render() {
     return (

@@ -20,6 +20,9 @@ interface State {
   sortedAnnoys: Array<Annoy>;
 }
 
+/**
+ * Main screen with list of annoys.
+ */
 export default class IndexScreen extends PureComponent<Props, State> {
   static navigationOptions = ({ navigation }: NavigationScreenProps) => ({
     title: "AnnoyMe!",

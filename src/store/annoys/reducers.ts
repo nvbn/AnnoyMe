@@ -1,5 +1,4 @@
 import { omit, fromPairs } from "lodash";
-import { isAnnoyActive } from "../../utils";
 import * as constants from "../../constants";
 import {
   Annoys,
@@ -41,12 +40,7 @@ export default (state = initialState, action: AnnoysActionTypes): Annoys => {
     case REFRESH_IS_ACTIVE:
       return {
         ...state,
-        active: fromPairs(
-          Object.values(state.items).map(annoy => [
-            annoy.id,
-            isAnnoyActive(annoy, action.time),
-          ]),
-        ),
+        active: fromPairs(action.active.map(id => [id, true])),
       };
     default:
       return state;

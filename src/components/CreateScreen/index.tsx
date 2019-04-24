@@ -25,7 +25,10 @@ interface State {
   schedule: AnnoySchedule;
 }
 
-export default class CreateScreen extends PureComponent<Props> {
+/**
+ * Screen for creating new annnoys.
+ */
+export default class CreateScreen extends PureComponent<Props, State> {
   static navigationOptions = {
     title: "Create a new annoyance",
   };

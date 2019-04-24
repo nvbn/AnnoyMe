@@ -21,7 +21,7 @@ export const deleteAnnoy = (id: string) => ({
   id,
 });
 
-export const refreshIsActive = (time: Date) => ({
+export const refreshIsActive = (active: Array<string>) => ({
   type: REFRESH_IS_ACTIVE,
-  time,
+  active,
 });

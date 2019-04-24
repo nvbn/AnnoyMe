@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import { bindActionCreators, Dispatch, AnyAction } from "redux";
 import { connect } from "react-redux";
-import { refreshIsActive } from "../store/annoys/actions";
 import { State } from "../store";
 import Notifier from "../hocs/Notifier";
 
@@ -16,7 +15,7 @@ const mapStateToProps = (state: State, { children }: OwnProps) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
-  bindActionCreators({ refreshIsActive }, dispatch);
+  bindActionCreators({}, dispatch);
 
 export default connect(
   mapStateToProps,

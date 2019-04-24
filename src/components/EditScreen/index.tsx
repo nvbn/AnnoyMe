@@ -23,7 +23,10 @@ interface State {
   isTitleValid: boolean;
 }
 
-export default class EditScreen extends PureComponent<Props> {
+/**
+ * Screen for modifying existing annoys.
+ */
+export default class EditScreen extends PureComponent<Props, State> {
   static navigationOptions = {
     title: "Change the annoyance",
   };

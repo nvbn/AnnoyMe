@@ -14,6 +14,9 @@ interface State {
   isValid: boolean;
 }
 
+/**
+ * Input for changing numeric settings value.
+ */
 export default class NumberSettingsInput extends PureComponent<Props, State> {
   readonly state: State = {
     isValid: true,

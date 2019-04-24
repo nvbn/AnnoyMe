@@ -4,11 +4,15 @@ export const REFRESH_INTERVAL = 30000; // miliseconds
 
 export const SCHEDULE_NOTIFICATIONS = 7; // days
 
+export const FIRST_NOTIFICATION_DELAY = 2; // minutes
+
 export const DEFAULT_START_HOUR = 8;
 
 export const DEFAULT_END_HOUR = 24;
 
 export const DEFAULT_FREQUENCY = 10; // minutes
+
+export const MIN_FREQUENCY = 5; // minutes
 
 export const DEFAULT_ANNOYS: AnnoyItems = {
   "default-0": {
