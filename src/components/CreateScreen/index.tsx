@@ -15,7 +15,6 @@ interface Props extends NavigationScreenProps {
   endHour: number;
 
   createAnnoy: (annoy: Annoy) => void;
-  refreshIsActive: (date: Date) => void;
 }
 
 interface State {
@@ -47,8 +46,6 @@ export default class CreateScreen extends PureComponent<Props, State> {
       title: this.state.title,
       schedule: this.state.schedule,
     });
-
-    this.props.refreshIsActive(new Date());
 
     this.props.navigation.navigate(routes.index);
   };

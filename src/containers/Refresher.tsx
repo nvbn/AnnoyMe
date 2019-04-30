@@ -5,8 +5,12 @@ import { refreshIsActive } from "../store/annoys/actions";
 import { State } from "../store";
 import Refresher from "../hocs/Refresher";
 
-const mapStateToProps = (_: State, { children }: { children: ReactNode }) => ({
+const mapStateToProps = (
+  { annoys }: State,
+  { children }: { children: ReactNode },
+) => ({
   children,
+  annoys: annoys.items,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>

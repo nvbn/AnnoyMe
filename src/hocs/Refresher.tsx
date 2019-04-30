@@ -1,12 +1,12 @@
 import { Component, ReactNode } from "react";
 import * as constants from "../constants";
-import { Annoy } from "../types";
+import { AnnoyItems } from "../types";
 import { isAnnoyActive } from "./utils";
 
 type Props = {
   children: ReactNode;
 
-  annoys: Array<Annoy>;
+  annoys: AnnoyItems;
 
   refreshIsActive: (active: Array<string>) => void;
 };
@@ -18,7 +18,7 @@ export default class Refresher extends Component<Props> {
   private refreshIntervalId?: number;
 
   refresh = () => {
-    const active = this.props.annoys
+    const active = Object.values(this.props.annoys)
       .filter(annoy => isAnnoyActive(annoy, new Date()))
       .map(({ id }) => id);
 
