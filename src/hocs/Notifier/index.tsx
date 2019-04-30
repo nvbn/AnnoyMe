@@ -11,11 +11,15 @@ type Props = {
 
   annoys: AnnoyItems;
   frequency: number;
+  startHour: number;
+  endHour: number;
 };
 
 type State = {
   datesToSchedule: Array<Date>;
   frequency: number;
+  startHour: number;
+  endHour: number;
 };
 
 /**
@@ -24,23 +28,32 @@ type State = {
 export default class Notifier extends PureComponent<Props, State> {
   readonly state = {
     datesToSchedule: [],
+    startHour: -1,
+    endHour: -1,
     frequency: constants.DEFAULT_FREQUENCY,
   };
 
   static getDerivedStateFromProps(props: Props, state: State) {
     if (
-      props.frequency === state.frequency ||
-      props.frequency < constants.MIN_FREQUENCY
+      (props.frequency === state.frequency ||
+        props.frequency < constants.MIN_FREQUENCY) &&
+      state.datesToSchedule.length &&
+      state.startHour === props.startHour &&
+      state.endHour === props.endHour
     ) {
       return state;
     }
 
     return {
       frequency: props.frequency,
+      startHour: props.startHour,
+      endHour: props.endHour,
       datesToSchedule: getDatesToSchedule(
         new Date(),
-        props.frequency,
         constants.SCHEDULE_NOTIFICATIONS,
+        props.frequency,
+        props.startHour,
+        props.endHour,
       ),
     };
   }

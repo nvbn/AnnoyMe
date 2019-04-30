@@ -6,6 +6,7 @@ import {
   startOfHour,
   addHours,
   isBefore,
+  getHours,
 } from "date-fns";
 
 const getHourMinutesToSchedule = (frequency: number) => range(1, 60, frequency);
@@ -24,6 +25,12 @@ const getHourRange = (from: Date, days: number) => {
   );
 };
 
+const isEnabledHour = (date: Date, startHour: number, endHour: number) => {
+  const hour = getHours(date);
+
+  return startHour <= hour && hour <= endHour;
+};
+
 /**
  * Returns dates range for scheduling notifications.
  *
@@ -35,8 +42,12 @@ export const getDatesToSchedule = (
   from: Date,
   days: number,
   frequency: number,
+  startHour: number,
+  endHour: number,
 ): Array<Date> => {
-  const hourRange = getHourRange(from, days);
+  const hourRange = getHourRange(from, days).filter(date =>
+    isEnabledHour(date, startHour, endHour),
+  );
 
   const hourMinutesToSchedule = getHourMinutesToSchedule(frequency);
 

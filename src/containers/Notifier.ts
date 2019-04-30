@@ -12,6 +12,8 @@ const mapStateToProps = (state: State, { children }: OwnProps) => ({
   children,
   annoys: state.annoys.items,
   frequency: state.settings.frequency,
+  startHour: state.settings.startHour,
+  endHour: state.settings.endHour,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
