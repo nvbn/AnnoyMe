@@ -1,23 +1,25 @@
-import React, { Suspense } from "react";
+import React, { useCallback, Suspense } from "react";
 import { useNavigationParam } from "react-navigation-hooks";
 import { useNavigation } from "react-navigation-hooks";
 import * as routes from "../../navigation/routes";
-import { readableSettings } from "../../hooks/settings";
-import { editableTask } from "../../hooks/tasks";
+import { useReadableSettings } from "../../hooks/settings";
+import { useEditableTask } from "../../hooks/tasks";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import DeleteButton from "./DeleteButton";
 
 const EditScreen = () => {
   const { navigate } = useNavigation();
-  const settings = readableSettings();
+  const settings = useReadableSettings();
 
   const taskID = useNavigationParam<string, string>("id");
-  const { task, setIsValid, updateTaskData, deleteTask } = editableTask(taskID);
+  const { task, setIsValid, updateTaskData, deleteTask } = useEditableTask(
+    taskID,
+  );
 
-  const doDeleteTask = () => {
+  const doDeleteTask = useCallback(() => {
     deleteTask().then(() => navigate(routes.LIST));
-  };
+  }, [deleteTask, navigate]);
 
   return (
     <Suspense fallback={<Loading />}>

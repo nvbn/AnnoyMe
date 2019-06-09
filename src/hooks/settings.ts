@@ -1,38 +1,29 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useCallback } from "react";
 import ServicesContext from "../services/context";
 import { Settings } from "../types";
+import { useAsyncState, useFinalEffect } from "./utils";
 
-export const readableSettings = () => {
+export const useReadableSettings = () => {
   const { settingsService } = useContext(ServicesContext);
-
-  const [settings, setSettings] = useState<Settings>();
-  useEffect(() => {
-    settingsService.read().then(setSettings);
-  }, []);
-
+  const [settings] = useAsyncState(settingsService.read());
   return settings;
 };
 
-export const editableSettings = () => {
+export const useEditableSettings = () => {
   const { settingsService } = useContext(ServicesContext);
 
-  const [settings, setSettings] = useState<Settings>();
-  useEffect(() => {
-    settingsService.read().then(setSettings);
-  }, []);
-  useEffect(
-    () => () => {
-      if (settings) settingsService.save(settings);
-    },
-    [settings],
-  );
+  const [settings, setSettings] = useAsyncState(settingsService.read());
+  useFinalEffect(() => settingsService.save(settings!), [settings]);
 
-  const changeSetting = <T>(key: string, val: T) => {
-    setSettings({
-      ...settings,
-      [key]: val,
-    } as Settings);
-  };
+  const changeSetting = useCallback(
+    <T>(key: string, val: T) => {
+      setSettings({
+        ...settings,
+        [key]: val,
+      } as Settings);
+    },
+    [settings, setSettings],
+  );
 
   return { settings, changeSetting };
 };

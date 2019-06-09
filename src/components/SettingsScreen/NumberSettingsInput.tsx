@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Text, View, TextInput } from "react-native";
 import styles from "./styles";
 
@@ -13,16 +13,19 @@ interface Props {
 export default ({ label, value, validate, onValidChange }: Props) => {
   const [isValid, setIsValid] = useState(validate(value));
 
-  const onValueChange = (newValue: string) => {
-    const asNumber = Number(newValue);
+  const onValueChange = useCallback(
+    (newValue: string) => {
+      const asNumber = Number(newValue);
 
-    if (newValue.length && !isNaN(asNumber) && validate(asNumber)) {
-      onValidChange(asNumber);
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
-  };
+      if (newValue.length && !isNaN(asNumber) && validate(asNumber)) {
+        onValidChange(asNumber);
+        setIsValid(true);
+      } else {
+        setIsValid(false);
+      }
+    },
+    [onValidChange, setIsValid, validate],
+  );
 
   return (
     <View style={styles.inputContainer}>
@@ -32,7 +35,7 @@ export default ({ label, value, validate, onValidChange }: Props) => {
           styles.input,
           isValid ? styles.inputValid : styles.inputInvalid,
         ]}
-        defaultValue={value.toString()}
+        defaultValue={(value || "").toString()}
         onChangeText={onValueChange}
         keyboardType="number-pad"
       />

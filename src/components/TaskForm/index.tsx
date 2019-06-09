@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, TextInput } from "react-native";
 import { TaskSchedule, TaskChanges } from "../../types";
 import ScheduleInput from "./ScheduleInput";
+import { useTitleInputManager, useScheduleInputManager } from "./inputManagers";
 import styles from "./styles";
 
 interface Props {
@@ -15,8 +16,6 @@ interface Props {
   onValidationChange: (isValid: boolean) => void;
 }
 
-const validateTitle = (title: string) => title.length > 0;
-
 export default ({
   title,
   schedule,
@@ -25,26 +24,16 @@ export default ({
   onChange,
   onValidationChange,
 }: Props) => {
-  const [formTitle, setFormTitle] = useState(title);
-  const [isTitleValid, setIsTitleValid] = useState(validateTitle(formTitle));
-  const [formSchedule, setFormSchedule] = useState(schedule);
+  const { formTitle, isTitleValid, onTitleChange } = useTitleInputManager(
+    title,
+    onChange,
+    onValidationChange,
+  );
 
-  const onTitleChange = (newTitle: string) => {
-    setFormTitle(newTitle);
-    const isValid = validateTitle(newTitle);
-    if (isValid !== isTitleValid) {
-      setIsTitleValid(isValid);
-      onValidationChange(isValid);
-    }
-
-    onChange({ title: newTitle });
-  };
-
-  const onScheduleChange = (newSchedule: TaskSchedule) => {
-    setFormSchedule(newSchedule);
-
-    onChange({ schedule: newSchedule });
-  };
+  const { formSchedule, onScheduleChange } = useScheduleInputManager(
+    schedule,
+    onChange,
+  );
 
   return (
     <View style={styles.container}>

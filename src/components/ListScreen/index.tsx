@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React, { useCallback, Suspense } from "react";
 import { useNavigation } from "react-navigation-hooks";
-import { readableTasks } from "../../hooks/tasks";
+import { useReadableTasks } from "../../hooks/tasks";
 import * as routes from "../../navigation/routes";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
@@ -9,17 +9,19 @@ import HeaderRight from "./HeaderRight";
 
 const ListScreen = () => {
   const { navigate } = useNavigation();
-  const tasks = readableTasks();
+  const tasks = useReadableTasks();
+  const openTask = useCallback(({ id }) => navigate(routes.EDIT, { id }), [
+    navigate,
+    tasks,
+  ]);
+  const toCreateScreen = useCallback(() => navigate(routes.CREATE), [navigate]);
 
   return (
     <Suspense fallback={<Loading />}>
       {tasks && (
         <>
-          <List
-            tasks={tasks}
-            openTask={({ id }) => navigate(routes.EDIT, { id })}
-          />
-          <CreateButton onPress={() => navigate(routes.CREATE)} />
+          <List tasks={tasks} openTask={openTask} />
+          <CreateButton onPress={toCreateScreen} />
         </>
       )}
     </Suspense>
@@ -28,8 +30,9 @@ const ListScreen = () => {
 
 const ConnectedHeaderRight = () => {
   const { navigate } = useNavigation();
+  const toSettings = useCallback(() => navigate(routes.SETTINGS), [navigate]);
 
-  return <HeaderRight onPress={() => navigate(routes.SETTINGS)} />;
+  return <HeaderRight onPress={toSettings} />;
 };
 
 ListScreen.navigationOptions = {

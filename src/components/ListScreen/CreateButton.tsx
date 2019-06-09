@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useCallback } from "react";
 import { FloatingAction } from "react-native-floating-action";
 import * as colors from "../../colors";
 
@@ -9,15 +9,17 @@ interface Props {
 export default ({ onPress }: Props) => {
   const actionRef = useRef<any>(null);
 
+  const pressAndReset = useCallback(() => {
+    onPress();
+    setTimeout(actionRef.current.reset, 500);
+  }, [onPress, actionRef]);
+
   return (
     <FloatingAction
       position="right"
       color={colors.green400}
       showBackground={false}
-      onPressMain={() => {
-        onPress();
-        setTimeout(actionRef.current.reset, 500);
-      }}
+      onPressMain={pressAndReset}
       ref={actionRef}
     />
   );

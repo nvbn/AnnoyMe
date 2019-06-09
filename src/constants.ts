@@ -1,4 +1,4 @@
-import { AnnoyItems } from "./types";
+import { Task, Settings } from "./types";
 
 export const REFRESH_INTERVAL = 10000; // miliseconds
 
@@ -12,10 +12,16 @@ export const DEFAULT_END_HOUR = 24;
 
 export const DEFAULT_FREQUENCY = 10; // minutes
 
+export const DEFAULT_SETTINGS: Settings = {
+  startHour: DEFAULT_START_HOUR,
+  endHour: DEFAULT_END_HOUR,
+  frequency: DEFAULT_FREQUENCY,
+};
+
 export const MIN_FREQUENCY = 5; // minutes
 
-export const DEFAULT_ANNOYS: AnnoyItems = {
-  "default-0": {
+export const DEFAULT_TASKS: Task[] = [
+  {
     id: "default-0",
     created: new Date(),
     schedule: {
@@ -27,7 +33,7 @@ export const DEFAULT_ANNOYS: AnnoyItems = {
     },
     title: "Grab a fruit after lunch",
   },
-  "default-1": {
+  {
     id: "default-1",
     created: new Date(),
     schedule: {
@@ -36,7 +42,7 @@ export const DEFAULT_ANNOYS: AnnoyItems = {
     },
     title: "Go run in the park",
   },
-  "default-2": {
+  {
     id: "default-2",
     created: new Date(),
     schedule: {
@@ -48,4 +54,4 @@ export const DEFAULT_ANNOYS: AnnoyItems = {
     },
     title: "Read a book",
   },
-};
+];

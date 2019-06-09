@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { range, fromPairs } from "lodash";
 import { TaskSchedule } from "../../types";
 
@@ -62,26 +62,37 @@ export default (
   onChange: (schedule: TaskSchedule) => void,
 ) => {
   const [formSchedule, setFormSchedule] = useState(schedule);
-  const isSelected = (weekDayNumber: number, hour: number) => {
-    const hours = formSchedule[weekDayNumber + 1];
+  const isSelected = useCallback(
+    (weekDayNumber: number, hour: number) => {
+      const hours = formSchedule[weekDayNumber + 1];
 
-    return hours && hours[hour];
-  };
+      return hours && hours[hour];
+    },
+    [formSchedule],
+  );
 
-  const applyChanges = (newSchedule: TaskSchedule) => {
+  const applyChanges = useCallback((newSchedule: TaskSchedule) => {
     setFormSchedule(newSchedule);
     onChange(newSchedule);
-  };
+  }, []);
+
+  const toggle = useCallback(makeToggle(formSchedule, applyChanges), [
+    formSchedule,
+  ]);
+
+  const toggleHour = useCallback(makeToggleHour(formSchedule, applyChanges), [
+    formSchedule,
+  ]);
+
+  const toggleWeekday = useCallback(
+    makeToggleWeekday(formSchedule, startHour, endHour, applyChanges),
+    [formSchedule],
+  );
 
   return {
     isSelected,
-    toggle: makeToggle(formSchedule, applyChanges),
-    toggleHour: makeToggleHour(formSchedule, applyChanges),
-    toggleWeekday: makeToggleWeekday(
-      formSchedule,
-      startHour,
-      endHour,
-      applyChanges,
-    ),
+    toggle,
+    toggleHour,
+    toggleWeekday,
   };
 };

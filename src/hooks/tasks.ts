@@ -1,19 +1,15 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import ServicesContext from "../services/context";
-import { TaskChanges, Task } from "../types";
+import { TaskChanges } from "../types";
+import { useAsyncState, useFinalEffect } from "./utils";
 
-export const readableTasks = () => {
+export const useReadableTasks = () => {
   const { tasksService } = useContext(ServicesContext);
-
-  const [tasks, setTasks] = useState<Task[]>();
-  useEffect(() => {
-    tasksService.getAll().then(setTasks);
-  }, []);
-
+  const [tasks] = useAsyncState(tasksService.getAll());
   return tasks;
 };
 
-export const createableTask = () => {
+export const useCreateableTask = () => {
   const { tasksService } = useContext(ServicesContext);
 
   const [task, setTask] = useState(tasksService.emptyTask());
@@ -43,26 +39,20 @@ export const createableTask = () => {
   };
 };
 
-export const editableTask = (id: string) => {
+export const useEditableTask = (id: string) => {
   const { tasksService } = useContext(ServicesContext);
 
-  const [task, setTask] = useState<Task>();
-  useEffect(() => {
-    tasksService.getOne(id).then(setTask);
-  }, []);
+  const [task, setTask] = useAsyncState(tasksService.getOne(id));
 
   const [isDeleted, setIsDeleted] = useState(false);
   const [isValid, setIsValid] = useState(false);
-  useEffect(
-    () => () => {
-      if (task && !isDeleted && isValid) {
-        tasksService
-          .save(task)
-          .then(() => {}, err => console.error("Unable to save task", err));
-      }
-    },
-    [task, isDeleted],
-  );
+  useFinalEffect(() => {
+    if (!isDeleted && isValid) {
+      tasksService
+        .save(task!)
+        .then(() => {}, err => console.error("Unable to save task", err));
+    }
+  }, [task, isDeleted]);
 
   const deleteTask = async (): Promise<void> => {
     if (task) {

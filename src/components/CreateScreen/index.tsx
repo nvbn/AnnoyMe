@@ -1,15 +1,15 @@
-import React, { Suspense } from "react";
+import React, { useCallback, Suspense } from "react";
 import { useNavigation } from "react-navigation-hooks";
 import * as routes from "../../navigation/routes";
-import { readableSettings } from "../../hooks/settings";
-import { createableTask } from "../../hooks/tasks";
+import { useReadableSettings } from "../../hooks/settings";
+import { useCreateableTask } from "../../hooks/tasks";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import SaveButton from "./SaveButton";
 
 const CreateScreen = () => {
   const { navigate } = useNavigation();
-  const settings = readableSettings();
+  const settings = useReadableSettings();
   const {
     task,
     isValid,
@@ -17,11 +17,11 @@ const CreateScreen = () => {
     isSaving,
     updateTaskData,
     save,
-  } = createableTask();
+  } = useCreateableTask();
 
-  const createTask = () => {
+  const createTask = useCallback(() => {
     save().then(() => navigate(routes.LIST));
-  };
+  }, [navigate]);
 
   return (
     <Suspense fallback={<Loading />}>

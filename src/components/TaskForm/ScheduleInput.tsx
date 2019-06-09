@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { range } from "lodash";
 import { eachDay, startOfWeek, endOfWeek, format } from "date-fns";
 import { TaskSchedule } from "../../types";
-import scheduleManager from "./scheduleManager";
+import useScheduleManager from "./scheduleManager";
 import styles from "./styles";
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
   onChange: (schedule: TaskSchedule) => void;
 }
 
-const makeWeekdayRange = () =>
+const useWeekdayRange = () =>
   useMemo(() => {
     const now = new Date();
 
@@ -25,10 +25,10 @@ const makeWeekdayRange = () =>
   }, []);
 
 export default ({ startHour, endHour, schedule, onChange }: Props) => {
-  const weekdayRange = makeWeekdayRange();
+  const weekdayRange = useWeekdayRange();
   const hourRange = useMemo(() => range(startHour, endHour + 1), []);
 
-  const { isSelected, toggle, toggleHour, toggleWeekday } = scheduleManager(
+  const { isSelected, toggle, toggleHour, toggleWeekday } = useScheduleManager(
     schedule,
     startHour,
     endHour,
