@@ -1,63 +1,39 @@
-import React, { PureComponent } from "react";
-import { View } from "react-native";
-import * as constants from "../../constants";
-import NumberSettingsInput from "./NumberSettingsInput";
-import styles from "./styles";
+import React, { useContext, useEffect, useState, Suspense } from "react";
+import ServicesContext from "../../services/context";
+import Loading from "../Loading";
+import Form from "./Form";
 
-interface Props {
-  startHour: number;
-  endHour: number;
-  frequency: number;
+const SettingsScreen = () => {
+  const { settingsService } = useContext(ServicesContext);
 
-  setStartHour: (value: number) => void;
-  setEndHour: (value: number) => void;
-  setFrequency: (value: number) => void;
-}
+  const [settings, setSettings] = useState();
+  useEffect(() => {
+    settingsService.read().then(setSettings);
 
-interface State {
-  startHourValid: boolean;
-  endHourValid: boolean;
-  frequencyValid: boolean;
-}
+    return () => {
+      settingsService.save(settings);
+    };
+  }, []);
 
-export default class SettingsScreen extends PureComponent<Props, State> {
-  static navigationOptions = {
-    title: "Settings",
-  };
-
-  readonly state: State = {
-    startHourValid: true,
-    endHourValid: true,
-    frequencyValid: true,
-  };
-
-  isValidHour = (hour: number) => hour >= 0 && hour <= 24;
-
-  isValidFrequency = (minutes: number) =>
-    minutes >= constants.MIN_FREQUENCY && minutes <= 120;
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <NumberSettingsInput
-          label="Annoy from hour"
-          value={this.props.startHour}
-          validate={this.isValidHour}
-          onValidChange={this.props.setStartHour}
+  return (
+    <Suspense fallback={<Loading />}>
+      {settings && (
+        <Form
+          onNumberSettingsChange={(key, val) => {
+            setSettings({
+              ...setImmediate,
+              [key]: val,
+            });
+          }}
+          {...settings}
         />
-        <NumberSettingsInput
-          label="Annoy till hour"
-          value={this.props.endHour}
-          validate={this.isValidHour}
-          onValidChange={this.props.setEndHour}
-        />
-        <NumberSettingsInput
-          label="Annoys frequency"
-          value={this.props.frequency}
-          validate={this.isValidFrequency}
-          onValidChange={this.props.setFrequency}
-        />
-      </View>
-    );
-  }
-}
+      )}
+    </Suspense>
+  );
+};
+
+SettingsScreen.navigationOptions = {
+  title: "Settings",
+};
+
+export default SettingsScreen;
