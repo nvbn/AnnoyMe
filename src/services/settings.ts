@@ -1,5 +1,5 @@
 import { AsyncStorageStatic } from "react-native";
-import { Settings } from "./types";
+import { Settings } from "../types";
 
 export default class SettingsService {
   storage: AsyncStorageStatic;

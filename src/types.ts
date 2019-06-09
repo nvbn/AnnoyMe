@@ -20,3 +20,29 @@ export interface ActiveAnnoys {
 export interface AnnoyItems {
   [id: string]: Annoy;
 }
+
+export interface TaskHours {
+  [key: number]: boolean;
+}
+
+export interface TaskSchedule {
+  [key: number]: TaskHours;
+}
+
+export interface Task {
+  id: string;
+  created: Date;
+  title: string;
+  schedule: TaskSchedule;
+}
+
+export interface TaskChanges {
+  title?: string;
+  schedule?: TaskSchedule;
+}
+
+export interface Settings {
+  startHour: number;
+  endHour: number;
+  frequency: number;
+}

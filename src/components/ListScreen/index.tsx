@@ -1,25 +1,22 @@
-import React, { useState, useEffect, useContext, Suspense } from "react";
-import ServicesContext from "../../services/context";
-import { Task } from "../../services/tasks/types";
+import React, { Suspense } from "react";
+import { useNavigation } from "react-navigation-hooks";
+import { readableTasks } from "../../hooks/tasks";
+import * as routes from "../../navigation/routes";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
 import List from "./List";
 import HeaderRight from "./HeaderRight";
 
 const ListScreen = () => {
-  const { tasksService } = useContext(ServicesContext);
-
-  const [tasks, setTasks] = useState<Task[]>();
-  useEffect(() => {
-    tasksService.getAll().then(setTasks);
-  }, []);
+  const { navigate } = useNavigation();
+  const tasks = readableTasks();
 
   return (
     <Suspense fallback={<Loading />}>
       {tasks && (
         <>
           <List tasks={tasks} />
-          <CreateButton />
+          <CreateButton onPress={() => navigate(routes.CREATE)} />
         </>
       )}
     </Suspense>

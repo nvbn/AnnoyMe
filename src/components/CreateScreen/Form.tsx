@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { View, TextInput } from "react-native";
-import { TaskSchedule } from "../../services/tasks/types";
+import { TaskSchedule, TaskChanges } from "../../types";
 import ScheduleInput from "../ScheduleInput";
 import styles from "./styles";
-
-interface TaskChanges {
-  title?: string;
-  schedule?: TaskSchedule;
-}
 
 interface Props {
   title: string;

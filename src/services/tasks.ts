@@ -1,6 +1,6 @@
 import { AsyncStorageStatic } from "react-native";
 import uuidv4 from "uuid/v4";
-import { Task } from "./types";
+import { Task } from "../types";
 
 export default class TasksService {
   storage: AsyncStorageStatic;
@@ -20,7 +20,7 @@ export default class TasksService {
     ];
   }
 
-  public async create(task: Task): Promise<null> {
+  public async save(task: Task): Promise<null> {
     return null;
   }
 

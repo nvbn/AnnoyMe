@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
-import { Task } from "../../services/tasks/types";
+import { Task } from "../../types";
 import styles from "./styles";
 
 interface Props {
