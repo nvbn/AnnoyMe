@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, Suspense } from "react";
 import ServicesContext from "../../services/context";
+import { Task } from "../../services/tasks/types";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
 import List from "./List";
@@ -8,7 +9,7 @@ import HeaderRight from "./HeaderRight";
 const ListScreen = () => {
   const { tasksService } = useContext(ServicesContext);
 
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState<Task[]>();
   useEffect(() => {
     tasksService.getAll().then(setTasks);
   }, []);

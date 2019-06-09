@@ -14,33 +14,28 @@ interface Props {
   endHour: number;
   frequency: number;
 
-  onNumberSettingsChange: (key: string, value: number) => void;
+  onSettingChange: <T>(key: string, value: T) => void;
 }
 
-export default ({
-  startHour,
-  endHour,
-  frequency,
-  onNumberSettingsChange,
-}: Props) => (
+export default ({ startHour, endHour, frequency, onSettingChange }: Props) => (
   <View style={styles.container}>
     <NumberSettingsInput
       label="Annoy from hour"
       value={startHour}
       validate={isValidHour}
-      onValidChange={val => onNumberSettingsChange("startHour", val)}
+      onValidChange={val => onSettingChange("startHour", val)}
     />
     <NumberSettingsInput
       label="Annoy till hour"
       value={endHour}
       validate={isValidHour}
-      onValidChange={val => onNumberSettingsChange("endHour", val)}
+      onValidChange={val => onSettingChange("endHour", val)}
     />
     <NumberSettingsInput
       label="Annoys frequency"
       value={frequency}
       validate={isValidFrequency}
-      onValidChange={val => onNumberSettingsChange("frequency", val)}
+      onValidChange={val => onSettingChange("frequency", val)}
     />
   </View>
 );

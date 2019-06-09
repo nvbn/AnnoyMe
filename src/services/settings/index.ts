@@ -1,7 +1,7 @@
 import { AsyncStorageStatic } from "react-native";
 import { Settings } from "./types";
 
-export default class Tasks {
+export default class SettingsService {
   storage: AsyncStorageStatic;
 
   constructor(storage: AsyncStorageStatic) {

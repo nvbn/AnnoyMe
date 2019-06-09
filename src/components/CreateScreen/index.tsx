@@ -1,91 +1,64 @@
-import React, { PureComponent } from "react";
-import { View, TextInput } from "react-native";
-import { NavigationScreenProps } from "react-navigation";
+import React, { useContext, useEffect, useState, Suspense } from "react";
 import { FloatingAction } from "react-native-floating-action";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import uuidv4 from "uuid/v4";
+import { useNavigation } from "react-navigation-hooks";
 import * as colors from "../../colors";
-import * as routes from "../../routes";
-import { Annoy, AnnoySchedule } from "../../types";
-import ScheduleInput from "../ScheduleInput";
-import styles from "./styles";
+import * as routes from "../../navigation/routes";
+import ServicesContext from "../../services/context";
+import { Settings } from "../../services/settings/types";
+import Loading from "../Loading";
+import Form from "./Form";
 
-interface Props extends NavigationScreenProps {
-  startHour: number;
-  endHour: number;
+const CreateScreen = () => {
+  const { navigate } = useNavigation();
 
-  createAnnoy: (annoy: Annoy) => void;
-}
+  const { tasksService, settingsService } = useContext(ServicesContext);
 
-interface State {
-  id: string;
-  title: string;
-  isTitleValid: boolean;
-  schedule: AnnoySchedule;
-}
+  const [settings, setSettings] = useState<Settings>();
+  useEffect(() => {
+    settingsService.read().then(setSettings);
+  }, []);
 
-/**
- * Screen for creating new annnoys.
- */
-export default class CreateScreen extends PureComponent<Props, State> {
-  static navigationOptions = {
-    title: "Create a new annoyance",
-  };
+  const [task, setTask] = useState(tasksService.emptyTask());
+  const [isValid, setIsValid] = useState(false);
 
-  readonly state: State = {
-    id: uuidv4(),
-    title: "",
-    isTitleValid: false,
-    schedule: {},
-  };
-
-  onSaveClicked = () => {
-    this.props.createAnnoy({
-      id: this.state.id,
-      created: new Date(),
-      title: this.state.title,
-      schedule: this.state.schedule,
-    });
-
-    this.props.navigation.navigate(routes.index);
-  };
-
-  onTitleChange = (title: string) => {
-    const isTitleValid = title.length > 0;
-
-    this.setState({
-      title,
-      isTitleValid,
-    });
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <TextInput
-          style={[
-            styles.input,
-            this.state.isTitleValid ? styles.inputValid : styles.inputInvalid,
-          ]}
-          placeholder="Name of the annoyance"
-          onChangeText={this.onTitleChange}
-        />
-        <ScheduleInput
-          startHour={this.props.startHour}
-          endHour={this.props.endHour}
-          onChange={schedule => this.setState({ schedule })}
-          schedule={this.state.schedule}
-        />
-        {this.state.isTitleValid === true && (
-          <FloatingAction
-            position="right"
-            color={colors.green400}
-            showBackground={false}
-            onPressMain={this.onSaveClicked}
-            floatingIcon={<Icon name="save" size={25} color="white" />}
+  return (
+    <Suspense fallback={<Loading />}>
+      {settings && (
+        <>
+          <Form
+            title={task.title}
+            schedule={task.schedule}
+            startHour={settings.startHour}
+            endHour={settings.endHour}
+            onChange={changes => {
+              setTask({
+                ...task,
+                ...changes,
+              });
+            }}
+            onValidationChange={setIsValid}
           />
-        )}
-      </View>
-    );
-  }
-}
+          {isValid && (
+            <FloatingAction
+              position="right"
+              color={colors.green400}
+              showBackground={false}
+              onPressMain={() => {
+                tasksService.create(task);
+                navigate(routes.LIST);
+              }}
+              floatingIcon={<Icon name="save" size={25} color="white" />}
+            />
+          )}
+        </>
+      )}
+    </Suspense>
+  );
+};
+
+CreateScreen.navigationOptions = {
+  title: "Create a new annoyance",
+};
+
+export default CreateScreen;
