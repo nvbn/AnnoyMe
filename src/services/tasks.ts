@@ -21,8 +21,8 @@ export default class TasksService {
     ];
   }
 
-  public async save(task: Task): Promise<null> {
-    return null;
+  public async save(task: Task): Promise<void> {
+    return;
   }
 
   public async getOne(id: string): Promise<Task> {
@@ -38,6 +38,10 @@ export default class TasksService {
 
       return this.emptyTask();
     }
+  }
+
+  public async delete(id: string): Promise<void> {
+    return;
   }
 
   public emptyTask(): Task {

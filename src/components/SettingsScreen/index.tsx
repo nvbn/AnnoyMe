@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-import { readWriteableSettings } from "../../hooks/settings";
+import { editableSettings } from "../../hooks/settings";
 import Loading from "../Loading";
 import Form from "./Form";
 
 const SettingsScreen = () => {
-  const { settings, changeSetting } = readWriteableSettings();
+  const { settings, changeSetting } = editableSettings();
 
   return (
     <Suspense fallback={<Loading />}>

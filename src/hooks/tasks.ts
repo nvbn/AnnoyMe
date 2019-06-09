@@ -51,9 +51,27 @@ export const editableTask = (id: string) => {
     tasksService.getOne(id).then(setTask);
   }, []);
 
+  const [isDeleted, setIsDeleted] = useState(false);
   const [isValid, setIsValid] = useState(false);
+  useEffect(
+    () => () => {
+      if (task && !isDeleted && isValid) {
+        tasksService
+          .save(task)
+          .then(() => {}, err => console.error("Unable to save task", err));
+      }
+    },
+    [task, isDeleted],
+  );
 
-  const [isSaving, setIsSaving] = useState(false);
+  const deleteTask = async (): Promise<void> => {
+    if (task) {
+      await tasksService.delete(task.id);
+      setIsDeleted(true);
+    } else {
+      console.warn("Trying to delete non-ready task");
+    }
+  };
 
   const updateTaskData = (changes: TaskChanges) => {
     if (task) {
@@ -66,23 +84,11 @@ export const editableTask = (id: string) => {
     }
   };
 
-  const save = (): Promise<null> => {
-    if (task) {
-      setIsSaving(true);
-      return tasksService.save(task);
-    } else {
-      console.warn("Trying to save non-ready task");
-
-      return new Promise((_, reject) => reject("Task not ready"));
-    }
-  };
-
   return {
     task,
     isValid,
     setIsValid,
-    isSaving,
     updateTaskData,
-    save,
+    deleteTask,
   };
 };

@@ -15,7 +15,10 @@ const ListScreen = () => {
     <Suspense fallback={<Loading />}>
       {tasks && (
         <>
-          <List tasks={tasks} />
+          <List
+            tasks={tasks}
+            openTask={({ id }) => navigate(routes.EDIT, { id })}
+          />
           <CreateButton onPress={() => navigate(routes.CREATE)} />
         </>
       )}

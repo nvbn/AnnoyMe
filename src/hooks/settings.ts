@@ -13,17 +13,19 @@ export const readableSettings = () => {
   return settings;
 };
 
-export const readWriteableSettings = () => {
+export const editableSettings = () => {
   const { settingsService } = useContext(ServicesContext);
 
   const [settings, setSettings] = useState<Settings>();
   useEffect(() => {
     settingsService.read().then(setSettings);
-
-    return () => {
-      if (settings) settingsService.save(settings);
-    };
   }, []);
+  useEffect(
+    () => () => {
+      if (settings) settingsService.save(settings);
+    },
+    [settings],
+  );
 
   const changeSetting = <T>(key: string, val: T) => {
     setSettings({
