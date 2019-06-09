@@ -23,9 +23,15 @@ const ListScreen = () => {
   );
 };
 
+const ConnectedHeaderRight = () => {
+  const { navigate } = useNavigation();
+
+  return <HeaderRight onPress={() => navigate(routes.SETTINGS)} />;
+};
+
 ListScreen.navigationOptions = {
   title: "AnnoyMe!",
-  headerRight: <HeaderRight />,
+  headerRight: <ConnectedHeaderRight />,
 };
 
 export default ListScreen;

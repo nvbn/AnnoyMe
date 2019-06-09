@@ -1,19 +1,21 @@
 import React from "react";
-import { useNavigation } from "react-navigation-hooks";
-import HeaderButtons from "react-navigation-header-buttons";
-import * as routes from "../../navigation/routes";
-import HeaderButton from "../HeaderButton";
+import HeaderButtons, { HeaderButton } from "react-navigation-header-buttons";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
-export default () => {
-  const { navigate } = useNavigation();
+const HeaderButtonComponent = <T extends {}>(options: T) => (
+  <HeaderButton {...options as any} IconComponent={Icon} iconSize={23} />
+);
 
-  return (
-    <HeaderButtons HeaderButtonComponent={HeaderButton}>
-      <HeaderButtons.Item
-        title="Settings"
-        iconName="settings"
-        onPress={() => navigate(routes.SETTINGS)}
-      />
-    </HeaderButtons>
-  );
-};
+interface Props {
+  onPress: () => void;
+}
+
+export default ({ onPress }: Props) => (
+  <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
+    <HeaderButtons.Item
+      title="Settings"
+      iconName="settings"
+      onPress={onPress}
+    />
+  </HeaderButtons>
+);

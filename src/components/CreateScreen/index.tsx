@@ -4,7 +4,7 @@ import * as routes from "../../navigation/routes";
 import { readableSettings } from "../../hooks/settings";
 import { createableTask } from "../../hooks/tasks";
 import Loading from "../Loading";
-import Form from "./Form";
+import TaskForm from "../TaskForm";
 import SaveButton from "./SaveButton";
 
 const CreateScreen = () => {
@@ -27,7 +27,7 @@ const CreateScreen = () => {
     <Suspense fallback={<Loading />}>
       {settings && !isSaving && (
         <>
-          <Form
+          <TaskForm
             title={task.title}
             schedule={task.schedule}
             startHour={settings.startHour}

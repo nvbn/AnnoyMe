@@ -8,17 +8,15 @@ interface Props {
   tasks: Task[];
 }
 
-export default ({ tasks }: Props) => {
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {tasks.map(task => (
-        <Item
-          task={task}
-          isActive={false}
-          key={`task-item-${task.id}`}
-          onPress={() => null}
-        />
-      ))}
-    </ScrollView>
-  );
-};
+export default ({ tasks }: Props) => (
+  <ScrollView contentContainerStyle={styles.container}>
+    {tasks.map(task => (
+      <Item
+        task={task}
+        isActive={false}
+        key={`task-item-${task.id}`}
+        onPress={() => null}
+      />
+    ))}
+  </ScrollView>
+);
