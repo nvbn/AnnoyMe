@@ -18,6 +18,10 @@ export const DEFAULT_SETTINGS: Settings = {
   frequency: DEFAULT_FREQUENCY,
 };
 
+export const STORAGE_SETTINGS_KEY = "settings";
+
+export const STORAGE_TASKS_KEY = "tasks";
+
 export const MIN_FREQUENCY = 5; // minutes
 
 export const DEFAULT_TASKS: Task[] = [

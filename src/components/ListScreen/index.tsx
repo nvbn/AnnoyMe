@@ -12,7 +12,6 @@ const ListScreen = () => {
   const tasks = useReadableTasks();
   const openTask = useCallback(({ id }) => navigate(routes.EDIT, { id }), [
     navigate,
-    tasks,
   ]);
   const toCreateScreen = useCallback(() => navigate(routes.CREATE), [navigate]);
 
