@@ -71,22 +71,27 @@ export default (
     [formSchedule],
   );
 
-  const applyChanges = useCallback((newSchedule: TaskSchedule) => {
-    setFormSchedule(newSchedule);
-    onChange(newSchedule);
-  }, []);
+  const applyChanges = useCallback(
+    (newSchedule: TaskSchedule) => {
+      setFormSchedule(newSchedule);
+      onChange(newSchedule);
+    },
+    [onChange],
+  );
 
   const toggle = useCallback(makeToggle(formSchedule, applyChanges), [
     formSchedule,
+    applyChanges,
   ]);
 
   const toggleHour = useCallback(makeToggleHour(formSchedule, applyChanges), [
     formSchedule,
+    applyChanges,
   ]);
 
   const toggleWeekday = useCallback(
     makeToggleWeekday(formSchedule, startHour, endHour, applyChanges),
-    [formSchedule],
+    [formSchedule, applyChanges],
   );
 
   return {

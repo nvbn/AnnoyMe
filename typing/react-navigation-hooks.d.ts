@@ -8,4 +8,6 @@ declare module "react-navigation-hooks" {
   function useNavigation<S>(): NavigationScreenProp<S & NavigationRoute>;
 
   function useNavigationParam<T extends keyof NavigationParams, P>(key: T): P;
+
+  function useFocusState(): boolean;
 }

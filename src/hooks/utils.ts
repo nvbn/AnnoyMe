@@ -10,11 +10,12 @@ import { every } from "lodash";
 /** `useState` with promise as default value */
 export const useAsyncState = <T>(
   statePromise: Promise<T>,
+  deps?: DependencyList,
 ): [T | undefined, Dispatch<SetStateAction<T | undefined>>] => {
   const [state, setState] = useState<T>();
   useEffect(() => {
     statePromise.then(setState);
-  }, []);
+  }, deps);
 
   return [state, setState];
 };

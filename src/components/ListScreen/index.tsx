@@ -1,6 +1,7 @@
-import React, { useCallback, Suspense } from "react";
-import { useNavigation } from "react-navigation-hooks";
-import { useReadableTasks } from "../../hooks/tasks";
+import React, { useCallback, useContext, Suspense } from "react";
+import { useNavigation, useFocusState } from "react-navigation-hooks";
+import ServicesContext from "../../services/context";
+import { useAsyncState } from "../../hooks/utils";
 import * as routes from "../../navigation/routes";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
@@ -9,11 +10,12 @@ import HeaderRight from "./HeaderRight";
 
 const ListScreen = () => {
   const { navigate } = useNavigation();
-  const tasks = useReadableTasks();
-  const openTask = useCallback(({ id }) => navigate(routes.EDIT, { id }), [
-    navigate,
-  ]);
-  const toCreateScreen = useCallback(() => navigate(routes.CREATE), [navigate]);
+  const { tasksService } = useContext(ServicesContext);
+  const focusState = useFocusState();
+
+  const [tasks] = useAsyncState(tasksService.getAll(), [focusState]);
+  const openTask = useCallback(({ id }) => navigate(routes.EDIT, { id }), []);
+  const toCreateScreen = useCallback(() => navigate(routes.CREATE), []);
 
   return (
     <Suspense fallback={<Loading />}>

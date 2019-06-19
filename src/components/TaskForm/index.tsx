@@ -1,38 +1,34 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { View, TextInput } from "react-native";
-import { TaskSchedule, TaskChanges } from "../../types";
+import { EditableTask, TaskSchedule } from "../../types";
 import ScheduleInput from "./ScheduleInput";
-import { useTitleInputManager, useScheduleInputManager } from "./inputManagers";
 import styles from "./styles";
 
 interface Props {
-  title: string;
-  schedule: TaskSchedule;
+  task: EditableTask;
 
-  startHour: number;
-  endHour: number;
+  scheduleStartHour: number;
+  scheduleEndHour: number;
 
-  onChange: (changes: TaskChanges) => void;
-  onValidationChange: (isValid: boolean) => void;
+  onChange: (task: EditableTask) => void;
 }
 
 export default ({
-  title,
-  schedule,
-  startHour,
-  endHour,
+  task,
+  scheduleStartHour,
+  scheduleEndHour,
   onChange,
-  onValidationChange,
 }: Props) => {
-  const { formTitle, isTitleValid, onTitleChange } = useTitleInputManager(
-    title,
-    onChange,
-    onValidationChange,
-  );
-
-  const { formSchedule, onScheduleChange } = useScheduleInputManager(
-    schedule,
-    onChange,
+  const updateTask = useCallback(
+    ({ title, schedule }: { title?: string; schedule?: TaskSchedule }) => {
+      console.log(task);
+      onChange({
+        ...task,
+        ...(title !== undefined ? { title, isValid: title.length > 0 } : {}),
+        ...(schedule !== undefined ? { schedule } : {}),
+      });
+    },
+    [task, onChange],
   );
 
   return (
@@ -40,17 +36,17 @@ export default ({
       <TextInput
         style={[
           styles.input,
-          isTitleValid ? styles.inputValid : styles.inputInvalid,
+          task.isValid ? styles.inputValid : styles.inputInvalid,
         ]}
         placeholder="Name of the annoyance"
-        onChangeText={onTitleChange}
-        defaultValue={formTitle}
+        onChangeText={title => updateTask({ title })}
+        value={task.title}
       />
       <ScheduleInput
-        schedule={formSchedule}
-        startHour={startHour}
-        endHour={endHour}
-        onChange={onScheduleChange}
+        schedule={task.schedule}
+        startHour={scheduleStartHour}
+        endHour={scheduleEndHour}
+        onChange={schedule => updateTask({ schedule })}
       />
     </View>
   );

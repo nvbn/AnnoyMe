@@ -1,5 +1,5 @@
-import { AsyncStorageStatic } from "react-native";
-import { find, findIndex, remove } from "lodash";
+import { AsyncStorageStatic } from "@react-native-community/async-storage";
+import { find, findIndex, without } from "lodash";
 import uuidv4 from "uuid/v4";
 import { Task } from "../types";
 import * as constants from "../constants";
@@ -32,12 +32,18 @@ export default class TasksService {
 
     const currentIndex = findIndex(tasks, { id: task.id });
     if (currentIndex === -1) {
-      tasks.push(task);
-    } else {
-      tasks[currentIndex] = task;
+      return;
     }
 
+    tasks[currentIndex] = task;
+
     await this.tasksToStorage(tasks);
+  }
+
+  public async create(task: Task): Promise<void> {
+    let tasks = await this.getAll();
+
+    await this.tasksToStorage([task, ...tasks]);
   }
 
   public async getOne(id: string): Promise<Task> {
@@ -55,11 +61,10 @@ export default class TasksService {
     }
   }
 
-  public async delete(id: string): Promise<void> {
+  public async delete(removeId: string): Promise<void> {
     const tasks = await this.getAll();
-    const afterRemoved = remove(tasks, { id });
 
-    await this.tasksToStorage(afterRemoved);
+    await this.tasksToStorage(tasks.filter(({ id }) => id !== removeId));
   }
 
   public emptyTask(): Task {

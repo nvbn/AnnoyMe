@@ -5,14 +5,14 @@ import { useAsyncState, useFinalEffect } from "./utils";
 
 export const useReadableSettings = () => {
   const { settingsService } = useContext(ServicesContext);
-  const [settings] = useAsyncState(settingsService.read());
+  const [settings] = useAsyncState(settingsService.read(), []);
   return settings;
 };
 
 export const useEditableSettings = () => {
   const { settingsService } = useContext(ServicesContext);
 
-  const [settings, setSettings] = useAsyncState(settingsService.read());
+  const [settings, setSettings] = useAsyncState(settingsService.read(), []);
   useFinalEffect(() => settingsService.save(settings!), [settings]);
 
   const changeSetting = useCallback(

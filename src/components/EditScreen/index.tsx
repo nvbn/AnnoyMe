@@ -1,9 +1,10 @@
-import React, { useCallback, Suspense } from "react";
+import React, { useCallback, useContext, useEffect, Suspense } from "react";
 import { useNavigationParam } from "react-navigation-hooks";
 import { useNavigation } from "react-navigation-hooks";
+import ServicesContext from "../../services/context";
 import * as routes from "../../navigation/routes";
 import { useReadableSettings } from "../../hooks/settings";
-import { useEditableTask } from "../../hooks/tasks";
+import { useAsyncState } from "../../hooks/utils";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import DeleteButton from "./DeleteButton";
@@ -11,29 +12,37 @@ import DeleteButton from "./DeleteButton";
 const EditScreen = () => {
   const { navigate } = useNavigation();
   const settings = useReadableSettings();
+  const { tasksService } = useContext(ServicesContext);
 
   const taskID = useNavigationParam<string, string>("id");
-  const { task, setIsValid, updateTaskData, deleteTask } = useEditableTask(
-    taskID,
+  const [task, setTask] = useAsyncState(
+    tasksService.getOne(taskID).then(task => ({ ...task, isValid: true })),
+    [taskID],
   );
 
-  const doDeleteTask = useCallback(() => {
-    deleteTask().then(() => navigate(routes.LIST));
-  }, [deleteTask, navigate]);
+  useEffect(() => {
+    if (task && task.isValid) {
+      tasksService.save(task);
+    }
+  }, [task]);
+
+  const deleteTask = useCallback(() => {
+    if (task) {
+      tasksService.delete(task.id).then(() => navigate(routes.LIST));
+    }
+  }, [task]);
 
   return (
     <Suspense fallback={<Loading />}>
       {settings && task && (
         <>
           <TaskForm
-            title={task.title}
-            schedule={task.schedule}
-            startHour={settings.startHour}
-            endHour={settings.endHour}
-            onChange={updateTaskData}
-            onValidationChange={setIsValid}
+            task={task}
+            scheduleStartHour={settings.startHour}
+            scheduleEndHour={settings.endHour}
+            onChange={setTask}
           />
-          <DeleteButton title={task.title} onYes={doDeleteTask} />
+          <DeleteButton title={task.title} onYes={deleteTask} />
         </>
       )}
     </Suspense>

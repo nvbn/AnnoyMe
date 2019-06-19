@@ -3,12 +3,6 @@ import ServicesContext from "../services/context";
 import { TaskChanges } from "../types";
 import { useAsyncState, useFinalEffect } from "./utils";
 
-export const useReadableTasks = () => {
-  const { tasksService } = useContext(ServicesContext);
-  const [tasks] = useAsyncState(tasksService.getAll());
-  return tasks;
-};
-
 export const useCreateableTask = () => {
   const { tasksService } = useContext(ServicesContext);
 
@@ -42,7 +36,7 @@ export const useCreateableTask = () => {
 export const useEditableTask = (id: string) => {
   const { tasksService } = useContext(ServicesContext);
 
-  const [task, setTask] = useAsyncState(tasksService.getOne(id));
+  const [task, setTask] = useAsyncState(tasksService.getOne(id), [id]);
 
   const [isDeleted, setIsDeleted] = useState(false);
   const [isValid, setIsValid] = useState(false);

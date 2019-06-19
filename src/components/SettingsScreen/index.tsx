@@ -1,10 +1,29 @@
-import React, { Suspense } from "react";
-import { useEditableSettings } from "../../hooks/settings";
+import React, { useEffect, useContext, useCallback, Suspense } from "react";
+import { Settings } from "../../types";
+import { useAsyncState } from "../../hooks/utils";
+import ServicesContext from "../../services/context";
 import Loading from "../Loading";
 import Form from "./Form";
 
 const SettingsScreen = () => {
-  const { settings, changeSetting } = useEditableSettings();
+  const { settingsService } = useContext(ServicesContext);
+
+  const [settings, setSettings] = useAsyncState(settingsService.read(), []);
+  useEffect(() => {
+    if (settings) {
+      settingsService.save(settings);
+    }
+  }, [settings]);
+
+  const changeSetting = useCallback(
+    <T extends string | number>(key: string, val: T) => {
+      setSettings({
+        ...settings,
+        [key]: val,
+      } as Settings);
+    },
+    [settings, setSettings],
+  );
 
   return (
     <Suspense fallback={<Loading />}>
