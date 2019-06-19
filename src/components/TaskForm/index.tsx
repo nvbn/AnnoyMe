@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { View, TextInput } from "react-native";
-import { EditableTask, TaskSchedule } from "../../types";
+import EditableTask from "../../dto/EditableTask";
+import TaskSchedule from "../../dto/TaskSchedule";
 import ScheduleInput from "./ScheduleInput";
 import styles from "./styles";
 

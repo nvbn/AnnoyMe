@@ -1,4 +1,4 @@
-import { Task } from "../../types";
+import Task from "../../dto/Task";
 
 export default interface ITasksService {
   getAll(): Promise<Task[]>;

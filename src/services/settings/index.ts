@@ -1,5 +1,5 @@
 import * as constants from "../../constants";
-import { Settings } from "../../types";
+import Settings from "../../dto/Settings";
 import IStorageService from "../storage/IStorageService";
 import ISettingsService from "./ISettingsService";
 

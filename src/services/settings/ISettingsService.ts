@@ -1,4 +1,4 @@
-import { Settings } from "../../types";
+import Settings from "../../dto/Settings";
 
 export default interface ISettingsService {
   read(): Promise<Settings>;

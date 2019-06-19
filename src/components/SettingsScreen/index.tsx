@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useCallback, Suspense } from "react";
-import { Settings } from "../../types";
+import Settings from "../../dto/Settings";
 import { useAsyncState } from "../../hooks";
 import { ServicesContext } from "../../contexts";
 import Loading from "../Loading";

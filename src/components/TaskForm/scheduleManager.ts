@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { range, fromPairs } from "lodash";
-import { TaskSchedule } from "../../types";
+import TaskSchedule from "../../dto/TaskSchedule";
 
 const makeToggle = (
   formSchedule: TaskSchedule,

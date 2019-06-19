@@ -1,4 +1,5 @@
-import { Task, Settings } from "./types";
+import Task from "./dto/Task";
+import Settings from "./dto/Settings";
 
 export const REFRESH_INTERVAL = 10000; // miliseconds
 

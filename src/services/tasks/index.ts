@@ -1,6 +1,6 @@
 import { find, findIndex } from "lodash";
 import uuidv4 from "uuid/v4";
-import { Task } from "../../types";
+import Task from "../../dto/Task";
 import * as constants from "../../constants";
 import IStorageService from "../storage/IStorageService";
 import ITasksService from "./ITasksService";
