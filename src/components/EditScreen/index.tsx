@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, Suspense } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { useNavigationParam } from "react-navigation-hooks";
 import { useNavigation } from "react-navigation-hooks";
 import { ServicesContext } from "../../contexts";
@@ -8,6 +8,7 @@ import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import DeleteButton from "./DeleteButton";
 
+/** A screen for modifying existing tasks. */
 const EditScreen = () => {
   const { navigate } = useNavigation();
   const { tasksService, settingsService } = useContext(ServicesContext);
@@ -32,20 +33,20 @@ const EditScreen = () => {
     }
   }, [task]);
 
+  if (!settings || !task) {
+    return <Loading />;
+  }
+
   return (
-    <Suspense fallback={<Loading />}>
-      {settings && task && (
-        <>
-          <TaskForm
-            task={task}
-            scheduleStartHour={settings.startHour}
-            scheduleEndHour={settings.endHour}
-            onChange={setTask}
-          />
-          <DeleteButton title={task.title} onYes={deleteTask} />
-        </>
-      )}
-    </Suspense>
+    <>
+      <TaskForm
+        task={task}
+        scheduleStartHour={settings.startHour}
+        scheduleEndHour={settings.endHour}
+        onChange={setTask}
+      />
+      <DeleteButton title={task.title} onYes={deleteTask} />
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useCallback, Suspense, useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useNavigation } from "react-navigation-hooks";
 import * as routes from "../../navigation/routes";
 import { useAsyncMemo } from "../../hooks";
@@ -7,6 +7,7 @@ import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import SaveButton from "./SaveButton";
 
+/** A screen for creating new tasks. */
 const CreateScreen = () => {
   const { navigate } = useNavigation();
   const { tasksService, settingsService } = useContext(ServicesContext);
@@ -22,20 +23,20 @@ const CreateScreen = () => {
     tasksService.create(task).then(() => navigate(routes.LIST));
   }, [task]);
 
+  if (!settings) {
+    return <Loading />;
+  }
+
   return (
-    <Suspense fallback={<Loading />}>
-      {settings && (
-        <>
-          <TaskForm
-            task={task}
-            scheduleStartHour={settings.startHour}
-            scheduleEndHour={settings.endHour}
-            onChange={setTask}
-          />
-          {task.isValid && <SaveButton onPress={createTask} />}
-        </>
-      )}
-    </Suspense>
+    <>
+      <TaskForm
+        task={task}
+        scheduleStartHour={settings.startHour}
+        scheduleEndHour={settings.endHour}
+        onChange={setTask}
+      />
+      {task.isValid && <SaveButton onPress={createTask} />}
+    </>
   );
 };
 

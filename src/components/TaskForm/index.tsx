@@ -14,6 +14,7 @@ interface Props {
   onChange: (task: EditableTask) => void;
 }
 
+/** A form for creating/editing a task. */
 export default ({
   task,
   scheduleStartHour,

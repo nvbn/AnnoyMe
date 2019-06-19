@@ -1,10 +1,11 @@
-import React, { useEffect, useContext, useCallback, Suspense } from "react";
+import React, { useEffect, useContext, useCallback } from "react";
 import Settings from "../../dto/Settings";
 import { useAsyncState } from "../../hooks";
 import { ServicesContext } from "../../contexts";
 import Loading from "../Loading";
 import Form from "./Form";
 
+/** A screen for modifying global application settings. */
 const SettingsScreen = () => {
   const { settingsService } = useContext(ServicesContext);
 
@@ -25,11 +26,11 @@ const SettingsScreen = () => {
     [settings, setSettings],
   );
 
-  return (
-    <Suspense fallback={<Loading />}>
-      {settings && <Form onSettingChange={changeSetting} {...settings} />}
-    </Suspense>
-  );
+  if (!settings) {
+    return <Loading />;
+  }
+
+  return <Form onSettingChange={changeSetting} {...settings} />;
 };
 
 SettingsScreen.navigationOptions = {

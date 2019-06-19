@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-  useContext,
-  Suspense,
-  useEffect,
-} from "react";
+import React, { useState, useCallback, useContext, useEffect } from "react";
 import { useNavigation, useFocusState } from "react-navigation-hooks";
 import { ServicesContext } from "../../contexts";
 import { useAsyncMemo } from "../../hooks";
@@ -17,6 +11,7 @@ import CreateButton from "./CreateButton";
 import List from "./List";
 import HeaderRight from "./HeaderRight";
 
+/** The main screen with list of all tasks. */
 const ListScreen = () => {
   const { navigate } = useNavigation();
   const { tasksService } = useContext(ServicesContext);
@@ -51,18 +46,19 @@ const ListScreen = () => {
     return () => clearInterval(refreshInterval);
   }, [tasks]);
 
+  if (!tasksWithStatus) {
+    return <Loading />;
+  }
+
   return (
-    <Suspense fallback={<Loading />}>
-      {tasksWithStatus && (
-        <>
-          <List tasks={tasksWithStatus} onItemPress={openTask} />
-          <CreateButton onPress={toCreateScreen} />
-        </>
-      )}
-    </Suspense>
+    <>
+      <List tasks={tasksWithStatus} onItemPress={openTask} />
+      <CreateButton onPress={toCreateScreen} />
+    </>
   );
 };
 
+/** Settings button for navigator panel. */
 const ConnectedHeaderRight = () => {
   const { navigate } = useNavigation();
   const toSettings = useCallback(() => navigate(routes.SETTINGS), [navigate]);
