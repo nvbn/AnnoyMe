@@ -21,7 +21,6 @@ export default ({
 }: Props) => {
   const updateTask = useCallback(
     ({ title, schedule }: { title?: string; schedule?: TaskSchedule }) => {
-      console.log(task);
       onChange({
         ...task,
         ...(title !== undefined ? { title, isValid: title.length > 0 } : {}),

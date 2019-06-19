@@ -1,18 +1,18 @@
 import React, { useCallback, useContext, useEffect, Suspense } from "react";
 import { useNavigationParam } from "react-navigation-hooks";
 import { useNavigation } from "react-navigation-hooks";
-import ServicesContext from "../../services/context";
+import { ServicesContext } from "../../contexts";
 import * as routes from "../../navigation/routes";
-import { useReadableSettings } from "../../hooks/settings";
-import { useAsyncState } from "../../hooks/utils";
+import { useAsyncState, useAsyncMemo } from "../../hooks";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import DeleteButton from "./DeleteButton";
 
 const EditScreen = () => {
   const { navigate } = useNavigation();
-  const settings = useReadableSettings();
-  const { tasksService } = useContext(ServicesContext);
+  const { tasksService, settingsService } = useContext(ServicesContext);
+
+  const settings = useAsyncMemo(() => settingsService.read(), []);
 
   const taskID = useNavigationParam<string, string>("id");
   const [task, setTask] = useAsyncState(

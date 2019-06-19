@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useCallback, Suspense } from "react";
 import { Settings } from "../../types";
-import { useAsyncState } from "../../hooks/utils";
-import ServicesContext from "../../services/context";
+import { useAsyncState } from "../../hooks";
+import { ServicesContext } from "../../contexts";
 import Loading from "../Loading";
 import Form from "./Form";
 

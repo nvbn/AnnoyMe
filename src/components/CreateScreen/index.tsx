@@ -1,16 +1,17 @@
 import React, { useCallback, Suspense, useContext, useState } from "react";
 import { useNavigation } from "react-navigation-hooks";
 import * as routes from "../../navigation/routes";
-import { useReadableSettings } from "../../hooks/settings";
-import ServicesContext from "../../services/context";
+import { useAsyncMemo } from "../../hooks";
+import { ServicesContext } from "../../contexts";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import SaveButton from "./SaveButton";
 
 const CreateScreen = () => {
   const { navigate } = useNavigation();
-  const settings = useReadableSettings();
-  const { tasksService } = useContext(ServicesContext);
+  const { tasksService, settingsService } = useContext(ServicesContext);
+
+  const settings = useAsyncMemo(() => settingsService.read(), []);
 
   const [task, setTask] = useState({
     ...tasksService.emptyTask(),

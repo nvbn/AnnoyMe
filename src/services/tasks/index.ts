@@ -1,19 +1,20 @@
-import { AsyncStorageStatic } from "@react-native-community/async-storage";
-import { find, findIndex, without } from "lodash";
+import { find, findIndex } from "lodash";
 import uuidv4 from "uuid/v4";
-import { Task } from "../types";
-import * as constants from "../constants";
+import { Task } from "../../types";
+import * as constants from "../../constants";
+import IStorageService from "../storage/IStorageService";
+import ITasksService from "./ITasksService";
 
-export default class TasksService {
-  storage: AsyncStorageStatic;
+export default class TasksService implements ITasksService {
+  storage: IStorageService;
 
-  constructor(storage: AsyncStorageStatic) {
+  constructor(storage: IStorageService) {
     this.storage = storage;
   }
 
   public async getAll(): Promise<Task[]> {
     try {
-      const tasks = await this.tasksFromStorage();
+      const tasks = await this.storage.read<Task[]>();
 
       if (tasks === undefined) {
         return constants.DEFAULT_TASKS;
@@ -37,13 +38,13 @@ export default class TasksService {
 
     tasks[currentIndex] = task;
 
-    await this.tasksToStorage(tasks);
+    await this.storage.write(tasks);
   }
 
   public async create(task: Task): Promise<void> {
     let tasks = await this.getAll();
 
-    await this.tasksToStorage([task, ...tasks]);
+    await this.storage.write([task, ...tasks]);
   }
 
   public async getOne(id: string): Promise<Task> {
@@ -64,7 +65,7 @@ export default class TasksService {
   public async delete(removeId: string): Promise<void> {
     const tasks = await this.getAll();
 
-    await this.tasksToStorage(tasks.filter(({ id }) => id !== removeId));
+    await this.storage.write(tasks.filter(({ id }) => id !== removeId));
   }
 
   public emptyTask(): Task {
@@ -74,21 +75,5 @@ export default class TasksService {
       created: new Date(),
       schedule: {},
     };
-  }
-
-  private async tasksFromStorage(): Promise<Task[] | undefined> {
-    const rawTasks = await this.storage.getItem(constants.STORAGE_TASKS_KEY);
-
-    if (rawTasks) {
-      return JSON.parse(rawTasks);
-    } else {
-      return;
-    }
-  }
-
-  private async tasksToStorage(tasks: Task[]): Promise<void> {
-    const serialized = JSON.stringify(tasks);
-
-    await this.storage.setItem(constants.STORAGE_TASKS_KEY, serialized);
   }
 }
