@@ -1,23 +1,22 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { Task } from "../../types";
+import TaskWithStatus from "../../dto/TaskWithStatus";
 import Item from "./Item";
 import styles from "./styles";
 
 interface Props {
-  tasks: Task[];
+  tasks: TaskWithStatus[];
 
-  openTask: (task: Task) => void;
+  onItemPress: (task: TaskWithStatus) => void;
 }
 
-export default ({ tasks, openTask }: Props) => (
+export default ({ tasks, onItemPress }: Props) => (
   <ScrollView contentContainerStyle={styles.container}>
     {tasks.map(task => (
       <Item
         task={task}
-        isActive={false}
         key={`task-item-${task.id}`}
-        onPress={() => openTask(task)}
+        onPress={() => onItemPress(task)}
       />
     ))}
   </ScrollView>

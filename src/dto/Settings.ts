@@ -1,3 +1,4 @@
+/** Application global settings. */
 export default interface Settings {
   startHour: number;
   endHour: number;

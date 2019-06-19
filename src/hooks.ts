@@ -6,7 +6,11 @@ import {
   SetStateAction,
 } from "react";
 
-/** `useState` with promises as default value */
+/** `useState` with promises as a default value
+ *
+ * @param defaultState promise with a default value
+ * @param deps hook dependencies
+ */
 export const useAsyncState = <T>(
   defaultState: Promise<T>,
   deps?: DependencyList,
@@ -19,7 +23,11 @@ export const useAsyncState = <T>(
   return [state, setState];
 };
 
-/** `useMemo` with promises */
+/** `useMemo` fro promises
+ *
+ * @param getPromise a function that returns a promise with a value to memoize
+ * @param deps hook dependencies
+ */
 export const useAsyncMemo = <T>(
   getPromise: () => Promise<T>,
   deps?: DependencyList,

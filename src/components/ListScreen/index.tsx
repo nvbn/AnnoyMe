@@ -1,8 +1,17 @@
-import React, { useCallback, useContext, Suspense } from "react";
+import React, {
+  useState,
+  useCallback,
+  useContext,
+  Suspense,
+  useEffect,
+} from "react";
 import { useNavigation, useFocusState } from "react-navigation-hooks";
 import { ServicesContext } from "../../contexts";
 import { useAsyncMemo } from "../../hooks";
 import * as routes from "../../navigation/routes";
+import * as constants from "../../constants";
+import TaskWithStatus from "../../dto/TaskWithStatus";
+import { isActive } from "../../dto/Task";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
 import List from "./List";
@@ -13,15 +22,40 @@ const ListScreen = () => {
   const { tasksService } = useContext(ServicesContext);
   const focusState = useFocusState();
 
-  const tasks = useAsyncMemo(() => tasksService.getAll(), [focusState]);
   const openTask = useCallback(({ id }) => navigate(routes.EDIT, { id }), []);
   const toCreateScreen = useCallback(() => navigate(routes.CREATE), []);
 
+  const tasks = useAsyncMemo(() => tasksService.getAll(), [focusState]);
+  const [tasksWithStatus, setTasksWithStatus] = useState<TaskWithStatus[]>();
+  useEffect(() => {
+    const updateTasksStatus = () => {
+      const now = new Date();
+
+      if (tasks) {
+        setTasksWithStatus(
+          tasks.map(task => ({
+            ...task,
+            isActive: isActive(task, now),
+          })),
+        );
+      }
+    };
+
+    updateTasksStatus();
+
+    const refreshInterval = setInterval(
+      updateTasksStatus,
+      constants.REFRESH_INTERVAL,
+    );
+
+    return () => clearInterval(refreshInterval);
+  }, [tasks]);
+
   return (
     <Suspense fallback={<Loading />}>
-      {tasks && (
+      {tasksWithStatus && (
         <>
-          <List tasks={tasks} openTask={openTask} />
+          <List tasks={tasksWithStatus} onItemPress={openTask} />
           <CreateButton onPress={toCreateScreen} />
         </>
       )}

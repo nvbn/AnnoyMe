@@ -1,20 +1,19 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
-import { Task } from "../../types";
+import TaskWithStatus from "../../dto/TaskWithStatus";
 import styles from "./styles";
 
 interface Props {
-  task: Task;
-  isActive: boolean;
+  task: TaskWithStatus;
 
   onPress: () => void;
 }
 
-export default ({ task, isActive, onPress }: Props) => (
+export default ({ task, onPress }: Props) => (
   <TouchableOpacity
     style={[
       styles.itemContainer,
-      isActive ? styles.itemActive : styles.itemInactive,
+      task.isActive ? styles.itemActive : styles.itemInactive,
     ]}
     onPress={onPress}
   >

@@ -1,7 +1,8 @@
 import { getISODay, getHours } from "date-fns";
 import TaskSchedule from "./TaskSchedule";
 
-interface Task {
+/** Representation of a task, the app sends notifications with a task is active. */
+export default interface Task {
   id: string;
   created: Date;
   title: string;
@@ -9,7 +10,7 @@ interface Task {
 }
 
 /**
- * Returns true when annoy is action at the time.
+ * Returns true when task is action at the time.
  *
  * @param annoy single annoy instance.
  * @param time current time
@@ -21,5 +22,3 @@ export const isActive = (task: Task, time: Date): boolean => {
   const daySchedule = task.schedule[day];
   return Boolean(daySchedule !== undefined && daySchedule[hours]);
 };
-
-export default Task;
