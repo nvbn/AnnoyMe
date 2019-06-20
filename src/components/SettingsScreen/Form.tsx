@@ -12,21 +12,8 @@ interface Props {
 
 export default ({ settings, onChange }: Props) => {
   const onValueChange = useCallback(
-    ({
-      startHour,
-      endHour,
-      frequency,
-    }: {
-      startHour?: number;
-      endHour?: number;
-      frequency?: number;
-    }) =>
-      onChange({
-        ...settings,
-        ...(startHour !== undefined ? { startHour } : {}),
-        ...(endHour !== undefined ? { endHour } : {}),
-        ...(frequency !== undefined ? { frequency } : {}),
-      }),
+    (changes: { startHour?: number; endHour?: number; frequency?: number }) =>
+      onChange({ ...settings, ...changes }),
     [settings, onChange],
   );
 

@@ -1,17 +1,17 @@
 import React, { useCallback } from "react";
 import { View, TextInput } from "react-native";
-import EditableTask from "../../dto/EditableTask";
+import Task, { isTitleValid } from "../../dto/Task";
 import TaskSchedule from "../../dto/TaskSchedule";
 import ScheduleInput from "./ScheduleInput";
 import styles from "./styles";
 
 interface Props {
-  task: EditableTask;
+  task: Task;
 
   scheduleStartHour: number;
   scheduleEndHour: number;
 
-  onChange: (task: EditableTask) => void;
+  onChange: (task: Task) => void;
 }
 
 /** A form for creating/editing a task. */
@@ -22,11 +22,10 @@ export default ({
   onChange,
 }: Props) => {
   const updateTask = useCallback(
-    ({ title, schedule }: { title?: string; schedule?: TaskSchedule }) =>
+    (changes: { title?: string; schedule?: TaskSchedule }) =>
       onChange({
         ...task,
-        ...(title !== undefined ? { title, isValid: title.length > 0 } : {}),
-        ...(schedule !== undefined ? { schedule } : {}),
+        ...changes,
       }),
     [task, onChange],
   );
@@ -36,7 +35,7 @@ export default ({
       <TextInput
         style={[
           styles.input,
-          task.isValid ? styles.inputValid : styles.inputInvalid,
+          isTitleValid(task.title) ? styles.inputValid : styles.inputInvalid,
         ]}
         placeholder="Name of the annoyance"
         onChangeText={title => updateTask({ title })}

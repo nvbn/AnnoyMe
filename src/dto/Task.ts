@@ -22,3 +22,8 @@ export const isActive = (task: Task, time: Date): boolean => {
   const daySchedule = task.schedule[day];
   return Boolean(daySchedule !== undefined && daySchedule[hours]);
 };
+
+export const isTitleValid = (title?: string): boolean =>
+  Boolean(title && title.length);
+
+export const isValid = ({ title }: Task): boolean => isTitleValid(title);
