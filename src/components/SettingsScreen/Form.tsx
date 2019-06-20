@@ -1,41 +1,55 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { View } from "react-native";
-import * as constants from "../../constants";
+import Settings, { isValidHour, isValidFrequency } from "../../dto/Settings";
 import NumberSettingsInput from "./NumberSettingsInput";
 import styles from "./styles";
 
-const isValidHour = (hour: number) => hour >= 0 && hour <= 24;
-
-const isValidFrequency = (minutes: number) =>
-  minutes >= constants.MIN_FREQUENCY && minutes <= 120;
-
 interface Props {
-  startHour: number;
-  endHour: number;
-  frequency: number;
+  settings: Settings;
 
-  onSettingChange: <T>(key: string, value: T) => void;
+  onChange: (settings: Settings) => void;
 }
 
-export default ({ startHour, endHour, frequency, onSettingChange }: Props) => (
-  <View style={styles.container}>
-    <NumberSettingsInput
-      label="Annoy from hour"
-      value={startHour}
-      validate={isValidHour}
-      onValidChange={val => onSettingChange("startHour", val)}
-    />
-    <NumberSettingsInput
-      label="Annoy till hour"
-      value={endHour}
-      validate={isValidHour}
-      onValidChange={val => onSettingChange("endHour", val)}
-    />
-    <NumberSettingsInput
-      label="Annoys frequency"
-      value={frequency}
-      validate={isValidFrequency}
-      onValidChange={val => onSettingChange("frequency", val)}
-    />
-  </View>
-);
+export default ({ settings, onChange }: Props) => {
+  const onValueChange = useCallback(
+    ({
+      startHour,
+      endHour,
+      frequency,
+    }: {
+      startHour?: number;
+      endHour?: number;
+      frequency?: number;
+    }) =>
+      onChange({
+        ...settings,
+        ...(startHour !== undefined ? { startHour } : {}),
+        ...(endHour !== undefined ? { endHour } : {}),
+        ...(frequency !== undefined ? { frequency } : {}),
+      }),
+    [settings, onChange],
+  );
+
+  return (
+    <View style={styles.container}>
+      <NumberSettingsInput
+        label="Annoy from hour"
+        value={settings.startHour}
+        validate={isValidHour}
+        onChange={startHour => onValueChange({ startHour })}
+      />
+      <NumberSettingsInput
+        label="Annoy till hour"
+        value={settings.endHour}
+        validate={isValidHour}
+        onChange={endHour => onValueChange({ endHour })}
+      />
+      <NumberSettingsInput
+        label="Annoys frequency"
+        value={settings.frequency}
+        validate={isValidFrequency}
+        onChange={frequency => onValueChange({ frequency })}
+      />
+    </View>
+  );
+};

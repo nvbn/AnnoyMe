@@ -1,5 +1,5 @@
 import React, { useEffect, useContext, useCallback } from "react";
-import Settings from "../../dto/Settings";
+import { isValid } from "../../dto/Settings";
 import { useAsyncState } from "../../hooks";
 import { ServicesContext } from "../../contexts";
 import Loading from "../Loading";
@@ -11,26 +11,16 @@ const SettingsScreen = () => {
 
   const [settings, setSettings] = useAsyncState(settingsService.read(), []);
   useEffect(() => {
-    if (settings) {
+    if (settings && isValid(settings)) {
       settingsService.save(settings);
     }
   }, [settings]);
-
-  const changeSetting = useCallback(
-    <T extends string | number>(key: string, val: T) => {
-      setSettings({
-        ...settings,
-        [key]: val,
-      } as Settings);
-    },
-    [settings, setSettings],
-  );
 
   if (!settings) {
     return <Loading />;
   }
 
-  return <Form onSettingChange={changeSetting} {...settings} />;
+  return <Form onChange={setSettings} settings={settings} />;
 };
 
 SettingsScreen.navigationOptions = {

@@ -22,13 +22,12 @@ export default ({
   onChange,
 }: Props) => {
   const updateTask = useCallback(
-    ({ title, schedule }: { title?: string; schedule?: TaskSchedule }) => {
+    ({ title, schedule }: { title?: string; schedule?: TaskSchedule }) =>
       onChange({
         ...task,
         ...(title !== undefined ? { title, isValid: title.length > 0 } : {}),
         ...(schedule !== undefined ? { schedule } : {}),
-      });
-    },
+      }),
     [task, onChange],
   );
 

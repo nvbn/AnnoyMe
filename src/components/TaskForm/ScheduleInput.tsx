@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { range } from "lodash";
 import { eachDay, startOfWeek, endOfWeek, format } from "date-fns";
-import { TaskSchedule } from "../../types";
+import TaskSchedule from "../../dto/TaskSchedule";
 import useScheduleManager from "./scheduleManager";
 import styles from "./styles";
 

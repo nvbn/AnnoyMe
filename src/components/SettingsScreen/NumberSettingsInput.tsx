@@ -7,38 +7,20 @@ interface Props {
   value: number;
 
   validate: (value: number) => boolean;
-  onValidChange: (value: number) => void;
+  onChange: (value: number) => void;
 }
 
-export default ({ label, value, validate, onValidChange }: Props) => {
-  const [isValid, setIsValid] = useState(validate(value));
-
-  const onValueChange = useCallback(
-    (newValue: string) => {
-      const asNumber = Number(newValue);
-
-      if (newValue.length && !isNaN(asNumber) && validate(asNumber)) {
-        onValidChange(asNumber);
-        setIsValid(true);
-      } else {
-        setIsValid(false);
-      }
-    },
-    [onValidChange, setIsValid, validate],
-  );
-
-  return (
-    <View style={styles.inputContainer}>
-      <Text style={styles.inputTitle}>{label}</Text>
-      <TextInput
-        style={[
-          styles.input,
-          isValid ? styles.inputValid : styles.inputInvalid,
-        ]}
-        defaultValue={(value || "").toString()}
-        onChangeText={onValueChange}
-        keyboardType="number-pad"
-      />
-    </View>
-  );
-};
+export default ({ label, value, validate, onChange }: Props) => (
+  <View style={styles.inputContainer}>
+    <Text style={styles.inputTitle}>{label}</Text>
+    <TextInput
+      style={[
+        styles.input,
+        validate(Number(value)) ? styles.inputValid : styles.inputInvalid,
+      ]}
+      defaultValue={(value || "").toString()}
+      onChangeText={value => onChange(Number(value))}
+      keyboardType="number-pad"
+    />
+  </View>
+);
