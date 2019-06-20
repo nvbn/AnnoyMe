@@ -1,5 +1,4 @@
 import React, { useEffect, useContext, useCallback } from "react";
-import { isValid } from "../../dto/Settings";
 import { useAsyncState } from "../../hooks";
 import { ServicesContext } from "../../contexts";
 import Loading from "../Loading";
@@ -7,12 +6,12 @@ import Form from "./Form";
 
 /** A screen for modifying global application settings. */
 const SettingsScreen = () => {
-  const { settingsService } = useContext(ServicesContext);
+  const { settingsRepository, settingsValidator } = useContext(ServicesContext);
 
-  const [settings, setSettings] = useAsyncState(settingsService.read(), []);
+  const [settings, setSettings] = useAsyncState(settingsRepository.read(), []);
   useEffect(() => {
-    if (settings && isValid(settings)) {
-      settingsService.save(settings);
+    if (settings && settingsValidator.isValid(settings)) {
+      settingsRepository.save(settings);
     }
   }, [settings]);
 
@@ -20,7 +19,14 @@ const SettingsScreen = () => {
     return <Loading />;
   }
 
-  return <Form onChange={setSettings} settings={settings} />;
+  return (
+    <Form
+      onChange={setSettings}
+      settings={settings}
+      isValidHour={settingsValidator.isValidHour}
+      isValidFrequency={settingsValidator.isValidFrequency}
+    />
+  );
 };
 
 SettingsScreen.navigationOptions = {

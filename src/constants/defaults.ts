@@ -1,11 +1,5 @@
-import Task from "./dto/Task";
-import Settings from "./dto/Settings";
-
-export const REFRESH_INTERVAL = 10000; // miliseconds
-
-export const SCHEDULE_NOTIFICATIONS = 7; // days
-
-export const FIRST_NOTIFICATION_DELAY = 2; // minutes
+import Task from "../dto/Task";
+import Settings from "../dto/Settings";
 
 export const DEFAULT_START_HOUR = 8;
 
@@ -18,12 +12,6 @@ export const DEFAULT_SETTINGS: Settings = {
   endHour: DEFAULT_END_HOUR,
   frequency: DEFAULT_FREQUENCY,
 };
-
-export const STORAGE_SETTINGS_KEY = "settings";
-
-export const STORAGE_TASKS_KEY = "tasks";
-
-export const MIN_FREQUENCY = 5; // minutes
 
 export const DEFAULT_TASKS: Task[] = [
   {

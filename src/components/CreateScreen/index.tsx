@@ -1,6 +1,5 @@
 import React, { useCallback, useContext, useState } from "react";
 import { useNavigation } from "react-navigation-hooks";
-import { isValid } from "../../dto/Task";
 import * as routes from "../../navigation/routes";
 import { useAsyncMemo } from "../../hooks";
 import { ServicesContext } from "../../contexts";
@@ -11,14 +10,16 @@ import SaveButton from "./SaveButton";
 /** A screen for creating new tasks. */
 const CreateScreen = () => {
   const { navigate } = useNavigation();
-  const { tasksService, settingsService } = useContext(ServicesContext);
+  const { tasksRepository, taskValidator, settingsRepository } = useContext(
+    ServicesContext,
+  );
 
-  const settings = useAsyncMemo(() => settingsService.read(), []);
+  const settings = useAsyncMemo(() => settingsRepository.read(), []);
 
-  const [task, setTask] = useState(tasksService.emptyTask());
+  const [task, setTask] = useState(tasksRepository.emptyTask());
 
   const createTask = useCallback(() => {
-    tasksService.create(task).then(() => navigate(routes.LIST));
+    tasksRepository.create(task).then(() => navigate(routes.LIST));
   }, [task]);
 
   if (!settings) {
@@ -32,8 +33,9 @@ const CreateScreen = () => {
         scheduleStartHour={settings.startHour}
         scheduleEndHour={settings.endHour}
         onChange={setTask}
+        isTitleValid={taskValidator.isTitleValid}
       />
-      {isValid(task) && <SaveButton onPress={createTask} />}
+      {taskValidator.isValid(task) && <SaveButton onPress={createTask} />}
     </>
   );
 };

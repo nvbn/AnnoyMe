@@ -1,24 +1,25 @@
-import * as constants from "../../constants";
 import Settings from "../../dto/Settings";
 import IStorageService from "../storage/IStorageService";
-import ISettingsService from "./ISettingsService";
+import ISettingsRepository from "./ISettingsRepository";
 
-export default class SettingsService implements ISettingsService {
+export default class SettingsRepository implements ISettingsRepository {
   storage: IStorageService;
+  defaultValue: Settings;
 
-  constructor(storage: IStorageService) {
+  constructor(storage: IStorageService, defaultValue: Settings) {
     this.storage = storage;
+    this.defaultValue = defaultValue;
   }
 
   public async read(): Promise<Settings> {
     try {
       const settings = await this.storage.read<Settings>();
 
-      return settings || constants.DEFAULT_SETTINGS;
+      return settings || this.defaultValue;
     } catch (e) {
       console.error("Unable to read settings, falling back to default", e);
 
-      return constants.DEFAULT_SETTINGS;
+      return this.defaultValue;
     }
   }
 

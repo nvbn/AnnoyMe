@@ -1,11 +1,9 @@
 import React, { useState, useCallback, useContext, useEffect } from "react";
 import { useNavigation, useFocusState } from "react-navigation-hooks";
-import { ServicesContext } from "../../contexts";
+import { ServicesContext, ConfigurationContext } from "../../contexts";
 import { useAsyncMemo } from "../../hooks";
 import * as routes from "../../navigation/routes";
-import * as constants from "../../constants";
 import TaskWithStatus from "../../dto/TaskWithStatus";
-import { isActive } from "../../dto/Task";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
 import List from "./List";
@@ -14,13 +12,14 @@ import HeaderRight from "./HeaderRight";
 /** The main screen with list of all tasks. */
 const ListScreen = () => {
   const { navigate } = useNavigation();
-  const { tasksService } = useContext(ServicesContext);
+  const { refreshInterval } = useContext(ConfigurationContext);
+  const { tasksRepository, taskValidator } = useContext(ServicesContext);
   const focusState = useFocusState();
 
   const openTask = useCallback(({ id }) => navigate(routes.EDIT, { id }), []);
   const toCreateScreen = useCallback(() => navigate(routes.CREATE), []);
 
-  const tasks = useAsyncMemo(() => tasksService.getAll(), [focusState]);
+  const tasks = useAsyncMemo(() => tasksRepository.getAll(), [focusState]);
   const [tasksWithStatus, setTasksWithStatus] = useState<TaskWithStatus[]>();
   useEffect(() => {
     const updateTasksStatus = () => {
@@ -30,7 +29,7 @@ const ListScreen = () => {
         setTasksWithStatus(
           tasks.map(task => ({
             ...task,
-            isActive: isActive(task, now),
+            isActive: taskValidator.isActive(task, now),
           })),
         );
       }
@@ -38,12 +37,9 @@ const ListScreen = () => {
 
     updateTasksStatus();
 
-    const refreshInterval = setInterval(
-      updateTasksStatus,
-      constants.REFRESH_INTERVAL,
-    );
+    const intervalId = setInterval(updateTasksStatus, refreshInterval);
 
-    return () => clearInterval(refreshInterval);
+    return () => clearInterval(intervalId);
   }, [tasks]);
 
   if (!tasksWithStatus) {

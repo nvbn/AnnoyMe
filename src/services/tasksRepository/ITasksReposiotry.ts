@@ -1,6 +1,6 @@
 import Task from "../../dto/Task";
 
-export default interface ITasksService {
+export default interface ITasksRepository {
   getAll(): Promise<Task[]>;
   getOne(id: string): Promise<Task>;
   save(task: Task): Promise<void>;

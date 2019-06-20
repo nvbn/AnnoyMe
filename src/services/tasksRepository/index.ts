@@ -1,15 +1,16 @@
 import { find, findIndex } from "lodash";
 import uuidv4 from "uuid/v4";
 import Task from "../../dto/Task";
-import * as constants from "../../constants";
 import IStorageService from "../storage/IStorageService";
-import ITasksService from "./ITasksService";
+import ITasksRepository from "./ITasksReposiotry";
 
-export default class TasksService implements ITasksService {
+export default class TasksRepository implements ITasksRepository {
   storage: IStorageService;
+  defaultValue: Task[];
 
-  constructor(storage: IStorageService) {
+  constructor(storage: IStorageService, defaultValue: Task[]) {
     this.storage = storage;
+    this.defaultValue = defaultValue;
   }
 
   public async getAll(): Promise<Task[]> {
@@ -17,14 +18,14 @@ export default class TasksService implements ITasksService {
       const tasks = await this.storage.read<Task[]>();
 
       if (tasks === undefined) {
-        return constants.DEFAULT_TASKS;
+        return this.defaultValue;
       } else {
         return tasks;
       }
     } catch (e) {
       console.error("Unable to read tasks", e);
 
-      return constants.DEFAULT_TASKS;
+      return this.defaultValue;
     }
   }
 

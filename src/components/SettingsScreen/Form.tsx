@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { View } from "react-native";
-import Settings, { isValidHour, isValidFrequency } from "../../dto/Settings";
+import Settings from "../../dto/Settings";
 import NumberSettingsInput from "./NumberSettingsInput";
 import styles from "./styles";
 
@@ -8,9 +8,17 @@ interface Props {
   settings: Settings;
 
   onChange: (settings: Settings) => void;
+
+  isValidHour: (hour: number) => boolean;
+  isValidFrequency: (frequency: number) => boolean;
 }
 
-export default ({ settings, onChange }: Props) => {
+export default ({
+  settings,
+  onChange,
+  isValidHour,
+  isValidFrequency,
+}: Props) => {
   const onValueChange = useCallback(
     (changes: { startHour?: number; endHour?: number; frequency?: number }) =>
       onChange({ ...settings, ...changes }),

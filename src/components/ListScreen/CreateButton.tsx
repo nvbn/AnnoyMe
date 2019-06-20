@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from "react";
 import { FloatingAction } from "react-native-floating-action";
-import * as colors from "../../colors";
+import * as colors from "../../constants/colors";
 
 interface Props {
   onPress: () => void;

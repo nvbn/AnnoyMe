@@ -4,7 +4,6 @@ import { useNavigation } from "react-navigation-hooks";
 import { ServicesContext } from "../../contexts";
 import * as routes from "../../navigation/routes";
 import { useAsyncState, useAsyncMemo } from "../../hooks";
-import { isValid } from "../../dto/Task";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import DeleteButton from "./DeleteButton";
@@ -12,21 +11,25 @@ import DeleteButton from "./DeleteButton";
 /** A screen for modifying existing tasks. */
 const EditScreen = () => {
   const { navigate } = useNavigation();
-  const { tasksService, settingsService } = useContext(ServicesContext);
+  const { tasksRepository, taskValidator, settingsRepository } = useContext(
+    ServicesContext,
+  );
 
-  const settings = useAsyncMemo(() => settingsService.read(), []);
+  const settings = useAsyncMemo(() => settingsRepository.read(), []);
 
   const taskID = useNavigationParam<string, string>("id");
-  const [task, setTask] = useAsyncState(tasksService.getOne(taskID), [taskID]);
+  const [task, setTask] = useAsyncState(tasksRepository.getOne(taskID), [
+    taskID,
+  ]);
 
   useEffect(() => {
-    if (task && isValid(task)) {
-      tasksService.save(task);
+    if (task && taskValidator.isValid(task)) {
+      tasksRepository.save(task);
     }
   }, [task]);
 
   const deleteTask = useCallback(
-    () => tasksService.delete(taskID).then(() => navigate(routes.LIST)),
+    () => tasksRepository.delete(taskID).then(() => navigate(routes.LIST)),
     [taskID],
   );
 
@@ -41,6 +44,7 @@ const EditScreen = () => {
         scheduleStartHour={settings.startHour}
         scheduleEndHour={settings.endHour}
         onChange={setTask}
+        isTitleValid={taskValidator.isTitleValid}
       />
       <DeleteButton title={task.title} onYes={deleteTask} />
     </>

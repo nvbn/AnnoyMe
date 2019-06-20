@@ -2,7 +2,7 @@ import React from "react";
 import { Alert } from "react-native";
 import { FloatingAction } from "react-native-floating-action";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import * as colors from "../../colors";
+import * as colors from "../../constants/colors";
 
 interface Props {
   title: string;
