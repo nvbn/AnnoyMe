@@ -4,6 +4,7 @@ import { ServicesContext, ConfigurationContext } from "../../contexts";
 import { useAsyncMemo } from "../../hooks";
 import * as routes from "../../navigation/routes";
 import TaskWithStatus from "../../dto/TaskWithStatus";
+import { isActive } from "../../dto/Task";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
 import List from "./List";
@@ -13,7 +14,7 @@ import HeaderRight from "./HeaderRight";
 const ListScreen = () => {
   const { navigate } = useNavigation();
   const { refreshInterval } = useContext(ConfigurationContext);
-  const { tasksRepository, taskValidator } = useContext(ServicesContext);
+  const { tasksRepository } = useContext(ServicesContext);
   const focusState = useFocusState();
 
   const openTask = useCallback(({ id }) => navigate(routes.EDIT, { id }), []);
@@ -29,7 +30,7 @@ const ListScreen = () => {
         setTasksWithStatus(
           tasks.map(task => ({
             ...task,
-            isActive: taskValidator.isActive(task, now),
+            isActive: isActive(task, now),
           })),
         );
       }

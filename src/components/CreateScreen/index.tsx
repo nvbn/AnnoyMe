@@ -3,6 +3,7 @@ import { useNavigation } from "react-navigation-hooks";
 import * as routes from "../../navigation/routes";
 import { useAsyncMemo } from "../../hooks";
 import { ServicesContext } from "../../contexts";
+import { isValid } from "../../dto/Task";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import SaveButton from "./SaveButton";
@@ -10,9 +11,7 @@ import SaveButton from "./SaveButton";
 /** A screen for creating new tasks. */
 const CreateScreen = () => {
   const { navigate } = useNavigation();
-  const { tasksRepository, taskValidator, settingsRepository } = useContext(
-    ServicesContext,
-  );
+  const { tasksRepository, settingsRepository } = useContext(ServicesContext);
 
   const settings = useAsyncMemo(() => settingsRepository.read(), []);
 
@@ -33,9 +32,8 @@ const CreateScreen = () => {
         scheduleStartHour={settings.startHour}
         scheduleEndHour={settings.endHour}
         onChange={setTask}
-        isTitleValid={taskValidator.isTitleValid}
       />
-      {taskValidator.isValid(task) && <SaveButton onPress={createTask} />}
+      {isValid(task) && <SaveButton onPress={createTask} />}
     </>
   );
 };
