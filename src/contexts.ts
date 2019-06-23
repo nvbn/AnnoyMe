@@ -1,6 +1,6 @@
 import React from "react";
-import ITasksRepository from "./services/tasksRepository/ITasksReposiotry";
 import ISettingsRepository from "./services/settingsRepository/ISettingsRepository";
+import ITasksRepository from "./services/tasksRepository/ITasksReposiotry";
 
 interface ServicesContextProps {
   tasksRepository: ITasksRepository;

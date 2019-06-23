@@ -1,9 +1,9 @@
 import {
-  useEffect,
-  useState,
   DependencyList,
   Dispatch,
   SetStateAction,
+  useEffect,
+  useState,
 } from "react";
 
 /** `useState` with promises as a default value

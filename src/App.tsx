@@ -1,12 +1,12 @@
-import React from "react";
 import AsyncStorage from "@react-native-community/async-storage";
-import Navigator from "./navigation/Navigator";
-import StorageService from "./services/storage";
-import SettingsRepository from "./services/settingsRepository";
-import TasksRepository from "./services/tasksRepository";
-import { ServicesContext, ConfigurationContext } from "./contexts";
-import * as defaults from "./constants/defaults";
+import React from "react";
 import * as configurations from "./constants/configurations";
+import * as defaults from "./constants/defaults";
+import { ConfigurationContext, ServicesContext } from "./contexts";
+import Navigator from "./navigation/Navigator";
+import SettingsRepository from "./services/settingsRepository";
+import StorageService from "./services/storage";
+import TasksRepository from "./services/tasksRepository";
 
 const settingsStorageService = new StorageService(
   AsyncStorage,

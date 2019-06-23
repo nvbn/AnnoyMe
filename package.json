@@ -7,7 +7,8 @@
     "start": "yarn cli start",
     "run-android": "yarn cli run-android",
     "test": "jest",
-    "rn-menu": "adb shell input keyevent KEYCODE_MENU"
+    "rn-menu": "adb shell input keyevent KEYCODE_MENU",
+    "lint": "tslint --project . src/**.ts src/**.tsx"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.4.2",
@@ -43,6 +44,10 @@
     "prettier": "1.16.4",
     "react-native-typescript-transformer": "^1.2.12",
     "react-test-renderer": "16.8.3",
+    "tslint": "^5.17.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
     "typescript": "^3.4.1"
   },
   "jest": {
