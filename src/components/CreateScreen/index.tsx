@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useState } from "react";
 import { useNavigation } from "react-navigation-hooks";
-import * as routes from "../../navigation/routes";
+import * as routes from "../../constants/routes";
 import { useAsyncMemo } from "../../hooks";
 import { ServicesContext } from "../../contexts";
 import { isValid } from "../../dto/Task";

@@ -3,7 +3,7 @@ import React from "react";
 import * as configurations from "./constants/configurations";
 import * as defaults from "./constants/defaults";
 import { ConfigurationContext, ServicesContext } from "./contexts";
-import Navigator from "./navigation/Navigator";
+import Navigator from "./Navigator";
 import SettingsRepository from "./services/settingsRepository";
 import StorageService from "./services/storage";
 import TasksRepository from "./services/tasksRepository";

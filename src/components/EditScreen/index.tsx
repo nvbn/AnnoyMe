@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useEffect } from "react";
 import { useNavigationParam } from "react-navigation-hooks";
 import { useNavigation } from "react-navigation-hooks";
 import { ServicesContext } from "../../contexts";
-import * as routes from "../../navigation/routes";
+import * as routes from "../../constants/routes";
 import { useAsyncState, useAsyncMemo } from "../../hooks";
 import { isValid } from "../../dto/Task";
 import Loading from "../Loading";

@@ -2,7 +2,7 @@ import React, { useState, useCallback, useContext, useEffect } from "react";
 import { useNavigation, useFocusState } from "react-navigation-hooks";
 import { ServicesContext, ConfigurationContext } from "../../contexts";
 import { useAsyncMemo } from "../../hooks";
-import * as routes from "../../navigation/routes";
+import * as routes from "../../constants/routes";
 import TaskWithStatus from "../../dto/TaskWithStatus";
 import { isActive } from "../../dto/Task";
 import Loading from "../Loading";
