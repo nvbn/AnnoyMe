@@ -1,14 +1,14 @@
-import React, { useState, useCallback, useContext, useEffect } from "react";
-import { useNavigation, useFocusState } from "react-navigation-hooks";
-import { ServicesContext, ConfigurationContext } from "../../contexts";
-import { useAsyncMemo } from "../../hooks";
+import React, { useCallback, useContext, useEffect, useState } from "react";
+import { useFocusState, useNavigation } from "react-navigation-hooks";
 import * as routes from "../../constants/routes";
-import TaskWithStatus from "../../dto/TaskWithStatus";
+import { ConfigurationContext, ServicesContext } from "../../contexts";
 import { isActive } from "../../dto/Task";
+import TaskWithStatus from "../../dto/TaskWithStatus";
+import { useAsyncMemo } from "../../hooks";
 import Loading from "../Loading";
 import CreateButton from "./CreateButton";
-import List from "./List";
 import HeaderRight from "./HeaderRight";
+import List from "./List";
 
 /** The main screen with list of all tasks. */
 const ListScreen = () => {

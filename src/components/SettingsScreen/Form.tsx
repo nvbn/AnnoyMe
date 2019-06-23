@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { View } from "react-native";
 import Settings, {
-  isStartHourValid,
   isEndHourValid,
   isFrequencyValid,
+  isStartHourValid,
 } from "../../dto/Settings";
 import NumberSettingsInput from "./NumberSettingsInput";
 import styles from "./styles";

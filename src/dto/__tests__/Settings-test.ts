@@ -1,7 +1,7 @@
 import {
-  isStartHourValid,
   isEndHourValid,
   isFrequencyValid,
+  isStartHourValid,
   isValid,
 } from "../Settings";
 

@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
-import { range, fromPairs } from "lodash";
+import { fromPairs, range } from "lodash";
+import { useCallback, useState } from "react";
 import TaskSchedule from "../../dto/TaskSchedule";
 
 const makeToggle = (
@@ -22,7 +22,7 @@ const makeToggleHour = (
   const alreadySelected = range(1, 8)
     .map(n => formSchedule[n] || {})
     .map(hours => hours[hour])
-    .filter(selected => selected === true);
+    .filter(selected => selected);
 
   const shouldBeSelected = alreadySelected.length !== 7;
 
@@ -43,7 +43,7 @@ const makeToggleWeekday = (
 ) => (weekDayNumber: number) => {
   const alreadySelected = range(startHour, endHour + 1)
     .map(n => (formSchedule[weekDayNumber + 1] || {})[n])
-    .filter(selected => selected === true);
+    .filter(selected => selected);
 
   const shouldBeSelected = alreadySelected.length !== endHour - startHour + 1;
 

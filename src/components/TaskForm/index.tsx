@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { View, TextInput } from "react-native";
+import { TextInput, View } from "react-native";
 import Task, { isTitleValid } from "../../dto/Task";
 import TaskSchedule from "../../dto/TaskSchedule";
 import ScheduleInput from "./ScheduleInput";

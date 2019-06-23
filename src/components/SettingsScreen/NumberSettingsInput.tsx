@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TextInput } from "react-native";
+import { Text, TextInput, View } from "react-native";
 import styles from "./styles";
 
 interface Props {
@@ -19,7 +19,7 @@ export default ({ label, value, validate, onChange }: Props) => (
         validate(Number(value)) ? styles.inputValid : styles.inputInvalid,
       ]}
       defaultValue={(value || "").toString()}
-      onChangeText={value => onChange(Number(value))}
+      onChangeText={newValue => onChange(Number(newValue))}
       keyboardType="number-pad"
     />
   </View>

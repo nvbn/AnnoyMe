@@ -1,9 +1,9 @@
 import React, { useCallback, useContext, useState } from "react";
 import { useNavigation } from "react-navigation-hooks";
 import * as routes from "../../constants/routes";
-import { useAsyncMemo } from "../../hooks";
 import { ServicesContext } from "../../contexts";
 import { isValid } from "../../dto/Task";
+import { useAsyncMemo } from "../../hooks";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import SaveButton from "./SaveButton";

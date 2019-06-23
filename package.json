@@ -8,7 +8,7 @@
     "run-android": "yarn cli run-android",
     "test": "jest",
     "rn-menu": "adb shell input keyevent KEYCODE_MENU",
-    "lint": "tslint --project . src/**.ts src/**.tsx"
+    "lint": "tslint --project ."
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.4.2",

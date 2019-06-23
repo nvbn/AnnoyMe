@@ -1,10 +1,9 @@
 import React, { useCallback, useContext, useEffect } from "react";
-import { useNavigationParam } from "react-navigation-hooks";
-import { useNavigation } from "react-navigation-hooks";
-import { ServicesContext } from "../../contexts";
+import { useNavigation, useNavigationParam } from "react-navigation-hooks";
 import * as routes from "../../constants/routes";
-import { useAsyncState, useAsyncMemo } from "../../hooks";
+import { ServicesContext } from "../../contexts";
 import { isValid } from "../../dto/Task";
+import { useAsyncMemo, useAsyncState } from "../../hooks";
 import Loading from "../Loading";
 import TaskForm from "../TaskForm";
 import DeleteButton from "./DeleteButton";

@@ -5,8 +5,8 @@ import IStorageService from "../storage/IStorageService";
 import ITasksRepository from "./ITasksReposiotry";
 
 export default class TasksRepository implements ITasksRepository {
-  storage: IStorageService;
-  defaultValue: Task[];
+  public storage: IStorageService;
+  public defaultValue: Task[];
 
   constructor(storage: IStorageService, defaultValue: Task[]) {
     this.storage = storage;
@@ -19,9 +19,8 @@ export default class TasksRepository implements ITasksRepository {
 
       if (tasks === undefined) {
         return this.defaultValue;
-      } else {
-        return tasks;
       }
+      return tasks;
     } catch (e) {
       console.error("Unable to read tasks", e);
 
@@ -30,7 +29,7 @@ export default class TasksRepository implements ITasksRepository {
   }
 
   public async save(task: Task): Promise<void> {
-    let tasks = [...(await this.getAll())];
+    const tasks = [...(await this.getAll())];
 
     const currentIndex = findIndex(tasks, { id: task.id });
     if (currentIndex === -1) {
@@ -43,7 +42,7 @@ export default class TasksRepository implements ITasksRepository {
   }
 
   public async create(task: Task): Promise<void> {
-    let tasks = await this.getAll();
+    const tasks = await this.getAll();
 
     await this.storage.write([task, ...tasks]);
   }
@@ -55,12 +54,11 @@ export default class TasksRepository implements ITasksRepository {
 
     if (task) {
       return task;
-    } else {
-      // It's an unexpected situation when we're not able to find task
-      console.warn("Unable to find task");
-
-      return this.emptyTask();
     }
+    // It's an unexpected situation when we're not able to find task
+    console.warn("Unable to find task");
+
+    return this.emptyTask();
   }
 
   public async delete(removeId: string): Promise<void> {

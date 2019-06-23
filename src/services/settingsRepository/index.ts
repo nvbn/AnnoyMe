@@ -3,8 +3,8 @@ import IStorageService from "../storage/IStorageService";
 import ISettingsRepository from "./ISettingsRepository";
 
 export default class SettingsRepository implements ISettingsRepository {
-  storage: IStorageService;
-  defaultValue: Settings;
+  public storage: IStorageService;
+  public defaultValue: Settings;
 
   constructor(storage: IStorageService, defaultValue: Settings) {
     this.storage = storage;

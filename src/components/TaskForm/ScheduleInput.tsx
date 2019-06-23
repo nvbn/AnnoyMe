@@ -1,7 +1,7 @@
-import React, { useMemo } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { eachDay, endOfWeek, format, startOfWeek } from "date-fns";
 import { range } from "lodash";
-import { eachDay, startOfWeek, endOfWeek, format } from "date-fns";
+import React, { useMemo } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 import TaskSchedule from "../../dto/TaskSchedule";
 import useScheduleManager from "./scheduleManager";
 import styles from "./styles";

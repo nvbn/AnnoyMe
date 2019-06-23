@@ -1,5 +1,5 @@
-import Task from "../dto/Task";
 import Settings from "../dto/Settings";
+import Task from "../dto/Task";
 
 export const DEFAULT_START_HOUR = 8;
 
