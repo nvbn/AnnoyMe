@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading shows loading message: Loading-shows-message 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 14,
+        "padding": 20,
+      }
+    }
+  >
+    Loading...
+  </Text>
+</View>
+`;
