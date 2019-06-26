@@ -55,6 +55,7 @@ const makeToggleWeekday = (
   });
 };
 
+/** Hook for managing state of `ScheduleInput`, not intended to be used separately. */
 export default (
   schedule: TaskSchedule,
   startHour: number,

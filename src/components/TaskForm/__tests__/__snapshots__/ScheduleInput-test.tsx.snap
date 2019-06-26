@@ -1,0 +1,2783 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScheduleInput renders schedule: ScheduleInput-renders 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "paddingTop": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderColor": "#eeeeee",
+            "borderWidth": 1,
+            "flex": 1,
+            "height": 25,
+          },
+          Object {
+            "backgroundColor": "#eeeeee",
+          },
+        ]
+      }
+    />
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="weekday-0"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Mo
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="weekday-1"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Tu
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="weekday-2"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        We
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="weekday-3"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Th
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="weekday-4"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Fr
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="weekday-5"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Sa
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="weekday-6"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        Su
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-9"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        9
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-9"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-9"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-9"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-9"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-9"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-9"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-9"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-10"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        10
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#c8e6c9",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-10"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#c8e6c9",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-10"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-10"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-10"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-10"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-10"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-10"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-11"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        11
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#c8e6c9",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-11"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#c8e6c9",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-11"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-11"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-11"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-11"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-11"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-11"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-12"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        12
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-12"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-12"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-12"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-12"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-12"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-12"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-12"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-13"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        13
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-13"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-13"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-13"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-13"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-13"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-13"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-13"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-14"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        14
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-14"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-14"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-14"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-14"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-14"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-14"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-14"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-15"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        15
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-15"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-15"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-15"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-15"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-15"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-15"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-15"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-16"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        16
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-16"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-16"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-16"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-16"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-16"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-16"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-16"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-17"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        17
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-17"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-17"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-17"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-17"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-17"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-17"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-17"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-18"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        18
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-18"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-18"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-18"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-18"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-18"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-18"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-18"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-19"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        19
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-19"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-19"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-19"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-19"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#c8e6c9",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-19"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-19"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-19"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-20"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        20
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-20"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-20"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-20"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-20"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#c8e6c9",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-20"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-20"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-20"
+    >
+      <View />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-21"
+    >
+      <Text
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        21
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-0-21"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-1-21"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-2-21"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-3-21"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-4-21"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-5-21"
+    >
+      <View />
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderColor": "#eeeeee",
+          "borderWidth": 1,
+          "flex": 1,
+          "height": 25,
+          "opacity": 1,
+        }
+      }
+      testID="hour-weekday-6-21"
+    >
+      <View />
+    </View>
+  </View>
+</View>
+`;

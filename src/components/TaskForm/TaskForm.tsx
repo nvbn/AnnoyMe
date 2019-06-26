@@ -40,12 +40,14 @@ export default ({
         placeholder="Name of the annoyance"
         onChangeText={title => updateTask({ title })}
         value={task.title}
+        testID="title-input"
       />
       <ScheduleInput
         schedule={task.schedule}
         startHour={scheduleStartHour}
         endHour={scheduleEndHour}
         onChange={schedule => updateTask({ schedule })}
+        testID="schedule-input"
       />
     </View>
   );

@@ -12,20 +12,22 @@ interface Props {
   schedule: TaskSchedule;
 
   onChange: (schedule: TaskSchedule) => void;
+
+  testID?: string;
 }
 
-const useWeekdayRange = () =>
-  useMemo(() => {
-    const now = new Date();
+const getWeekdayRange = () => {
+  const now = new Date();
 
-    return eachDay(
-      startOfWeek(now, { weekStartsOn: 1 }),
-      endOfWeek(now, { weekStartsOn: 1 }),
-    ).map(day => format(day, "dd"));
-  }, []);
+  return eachDay(
+    startOfWeek(now, { weekStartsOn: 1 }),
+    endOfWeek(now, { weekStartsOn: 1 }),
+  ).map(day => format(day, "dd"));
+};
 
+/** A special input for selecting/deselecting hours by week days. */
 export default ({ startHour, endHour, schedule, onChange }: Props) => {
-  const weekdayRange = useWeekdayRange();
+  const weekdayRange = useMemo(getWeekdayRange, []);
   const hourRange = useMemo(() => range(startHour, endHour + 1), []);
 
   const { isSelected, toggle, toggleHour, toggleWeekday } = useScheduleManager(
@@ -41,9 +43,10 @@ export default ({ startHour, endHour, schedule, onChange }: Props) => {
         <View style={[styles.scheduleInputBox, styles.scheduleInputLabelBox]} />
         {weekdayRange.map((weekDay, n) => (
           <TouchableOpacity
-            key={`week-day-label-${n}`}
+            key={`weekday-label-${n}`}
             style={[styles.scheduleInputBox, styles.scheduleInputLabelBox]}
             onPress={_ => toggleWeekday(n)}
+            testID={`weekday-${n}`}
           >
             <Text style={styles.scheduleInputLabel}>{weekDay}</Text>
           </TouchableOpacity>
@@ -54,12 +57,13 @@ export default ({ startHour, endHour, schedule, onChange }: Props) => {
           <TouchableOpacity
             style={[styles.scheduleInputBox, styles.scheduleInputLabelBox]}
             onPress={_ => toggleHour(hour)}
+            testID={`hour-${hour}`}
           >
             <Text style={styles.scheduleInputLabel}>{hour}</Text>
           </TouchableOpacity>
           {weekdayRange.map((_, n) => (
             <TouchableOpacity
-              key={`hour-week-day-${hour}-${n}`}
+              key={`hour-weekday-${hour}-${n}`}
               style={[
                 styles.scheduleInputBox,
                 isSelected(n, hour)
@@ -67,6 +71,7 @@ export default ({ startHour, endHour, schedule, onChange }: Props) => {
                   : styles.scheduleInputBoxNotSelected,
               ]}
               onPress={_ => toggle(n, hour)}
+              testID={`hour-weekday-${n}-${hour}`}
             >
               <View />
             </TouchableOpacity>
