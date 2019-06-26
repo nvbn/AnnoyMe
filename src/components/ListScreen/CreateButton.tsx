@@ -6,6 +6,7 @@ interface Props {
   onPress: () => void;
 }
 
+/** Floating button for creating a new task. */
 export default ({ onPress }: Props) => {
   const actionRef = useRef<any>(null);
 

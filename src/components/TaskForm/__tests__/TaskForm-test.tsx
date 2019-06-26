@@ -66,8 +66,7 @@ it("TaskForm changes task title", () => {
     },
   };
 
-  let changeableTask: Task | undefined;
-  const onChange = (changedTask: Task) => (changeableTask = changedTask);
+  const onChange = jest.fn((_: Task) => undefined);
 
   const component = renderer.create(
     <TaskForm
@@ -85,10 +84,14 @@ it("TaskForm changes task title", () => {
   act(() => {
     titleInput.props.onChangeText(newTitle);
   });
-  expect(changeableTask).toEqual({
-    ...task,
-    title: newTitle,
-  });
+  expect(onChange.mock.calls).toEqual([
+    [
+      {
+        ...task,
+        title: newTitle,
+      },
+    ],
+  ]);
 });
 
 it("TaskForm changes task schedule", () => {
@@ -101,8 +104,7 @@ it("TaskForm changes task schedule", () => {
     },
   };
 
-  let changeableTask: Task | undefined;
-  const onChange = (changedTask: Task) => (changeableTask = changedTask);
+  const onChange = jest.fn((_: Task) => undefined);
 
   const component = renderer.create(
     <TaskForm
@@ -118,8 +120,12 @@ it("TaskForm changes task schedule", () => {
 
   const newSchedule = { 1: { 10: true, 11: true, 12: true } };
   scheduleInput.props.onChange(newSchedule);
-  expect(changeableTask).toEqual({
-    ...task,
-    schedule: newSchedule,
-  });
+  expect(onChange.mock.calls).toEqual([
+    [
+      {
+        ...task,
+        schedule: newSchedule,
+      },
+    ],
+  ]);
 });

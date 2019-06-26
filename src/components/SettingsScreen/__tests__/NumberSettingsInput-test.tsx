@@ -37,8 +37,7 @@ it("NumberSettingsInput renders input with invalid number", () => {
 });
 
 it("NumberSettingsInput changes number", () => {
-  let changableValue: number | undefined;
-  const onChange = (newValue: number) => (changableValue = newValue);
+  const onChange = jest.fn((_: number) => undefined);
 
   const component = renderer.create(
     <NumberSettingsInput
@@ -57,5 +56,5 @@ it("NumberSettingsInput changes number", () => {
   act(() => {
     textInput.props.onChangeText("22");
   });
-  expect(changableValue).toBe(22);
+  expect(onChange.mock.calls).toEqual([[22]]);
 });

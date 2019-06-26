@@ -52,7 +52,10 @@
     "typescript": "^3.4.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/?!(react-navigation-header-buttons)"
+    ]
   },
   "husky": {
     "hooks": {

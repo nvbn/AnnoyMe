@@ -34,9 +34,7 @@ const assertCellPress = (
   scheduleBefore: TaskSchedule,
   scheduleAfter: TaskSchedule,
 ) => {
-  let changedSchedule: TaskSchedule | undefined;
-  const onChange = (newSchedule: TaskSchedule) =>
-    (changedSchedule = newSchedule);
+  const onChange = jest.fn((_: TaskSchedule) => undefined);
 
   const component = renderer.create(
     <ScheduleInput
@@ -51,7 +49,7 @@ const assertCellPress = (
   expect(cell).toBeTruthy();
 
   act(() => cell.props.onPress());
-  expect(changedSchedule).toEqual(scheduleAfter);
+  expect(onChange.mock.calls).toEqual([[scheduleAfter]]);
 };
 
 it("ScheduleInput activates single hour weekday", () =>

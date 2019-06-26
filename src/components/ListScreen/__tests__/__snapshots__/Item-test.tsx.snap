@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item renders active task: Item-active 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#9ccc65",
+      "borderBottomColor": "#eeeeee",
+      "borderBottomWidth": 2,
+      "opacity": 1,
+    }
+  }
+  testID="task-item"
+>
+  <Text
+    style={
+      Object {
+        "fontWeight": "400",
+        "padding": 20,
+      }
+    }
+  >
+    Test task!
+  </Text>
+</View>
+`;
+
+exports[`Item renders inactive task: Item-inactive 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderBottomColor": "#eeeeee",
+      "borderBottomWidth": 2,
+      "opacity": 1,
+    }
+  }
+  testID="task-item"
+>
+  <Text
+    style={
+      Object {
+        "fontWeight": "400",
+        "padding": 20,
+      }
+    }
+  >
+    Test inactive task!
+  </Text>
+</View>
+`;

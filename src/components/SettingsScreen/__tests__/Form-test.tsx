@@ -25,9 +25,7 @@ const assertInputChange = (
   settingsBefore: Settings,
   settingsAfter: Settings,
 ) => {
-  let changeableSettings: Settings | undefined;
-  const onChange = (newSettings: Settings) =>
-    (changeableSettings = newSettings);
+  const onChange = jest.fn((_: Settings) => undefined);
 
   const component = renderer.create(
     <Form settings={settingsBefore} onChange={onChange} />,
@@ -39,7 +37,7 @@ const assertInputChange = (
   act(() => {
     input.props.onChange(value);
   });
-  expect(changeableSettings).toEqual(settingsAfter);
+  expect(onChange.mock.calls).toEqual([[settingsAfter]]);
 };
 
 it("Form changes start hour", () =>

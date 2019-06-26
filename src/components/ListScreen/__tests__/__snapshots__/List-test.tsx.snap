@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List renders all tasks: List-all 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flex": 1,
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "borderBottomColor": "#eeeeee",
+          "borderBottomWidth": 2,
+          "opacity": 1,
+        }
+      }
+      testID="task-item"
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "400",
+            "padding": 20,
+          }
+        }
+      >
+        First test task
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#9ccc65",
+          "borderBottomColor": "#eeeeee",
+          "borderBottomWidth": 2,
+          "opacity": 1,
+        }
+      }
+      testID="task-item"
+    >
+      <Text
+        style={
+          Object {
+            "fontWeight": "400",
+            "padding": 20,
+          }
+        }
+      >
+        Second test task
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;

@@ -10,6 +10,7 @@ interface Props {
   onItemPress: (task: TaskWithStatus) => void;
 }
 
+/** Scrollable list of tasks. */
 export default ({ tasks, onItemPress }: Props) => (
   <ScrollView contentContainerStyle={styles.container}>
     {tasks.map(task => (
@@ -17,6 +18,7 @@ export default ({ tasks, onItemPress }: Props) => (
         task={task}
         key={`task-item-${task.id}`}
         onPress={() => onItemPress(task)}
+        testID={`task-item-${task.id}`}
       />
     ))}
   </ScrollView>

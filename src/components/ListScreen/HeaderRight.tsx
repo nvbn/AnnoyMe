@@ -10,12 +10,14 @@ interface Props {
   onPress: () => void;
 }
 
+/** Right header button for navigator that points to settings. */
 export default ({ onPress }: Props) => (
   <HeaderButtons HeaderButtonComponent={HeaderButtonComponent}>
     <HeaderButtons.Item
       title="Settings"
       iconName="settings"
       onPress={onPress}
+      testID="header-button"
     />
   </HeaderButtons>
 );
