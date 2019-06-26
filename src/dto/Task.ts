@@ -3,10 +3,10 @@ import TaskSchedule from "./TaskSchedule";
 
 /** Representation of a task, the app sends notifications with a task is active. */
 export default interface Task {
-  id: string;
-  created: Date;
-  title: string;
-  schedule: TaskSchedule;
+  readonly id: string;
+  readonly created: Date;
+  readonly title: string;
+  readonly schedule: TaskSchedule;
 }
 
 /** Ensures that a title is valid.

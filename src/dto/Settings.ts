@@ -1,8 +1,8 @@
 /** Application global settings. */
 export default interface Settings {
-  startHour: number;
-  endHour: number;
-  frequency: number;
+  readonly startHour: number;
+  readonly endHour: number;
+  readonly frequency: number;
 }
 
 /** isHourValid ensures that passed number is a valid hour for scheduling a task.
