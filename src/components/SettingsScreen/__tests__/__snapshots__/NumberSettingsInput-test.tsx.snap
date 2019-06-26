@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberSettingsInput renders input with invalid number: NumberSettingsInput-invalid 1`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontWeight": "200",
+      }
+    }
+  >
+    Frequency
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    defaultValue="1"
+    keyboardType="number-pad"
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+        },
+        Object {
+          "borderBottomColor": "#f44336",
+        },
+      ]
+    }
+    testID="number-settings-input-text-input"
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
+
+exports[`NumberSettingsInput renders input with valid number: NumberSettingsInput-valid 1`] = `
+<View
+  style={
+    Object {
+      "paddingBottom": 10,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontWeight": "200",
+      }
+    }
+  >
+    Frequency
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    defaultValue="12"
+    keyboardType="number-pad"
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+        },
+        Object {
+          "borderBottomColor": "#c8e6c9",
+        },
+      ]
+    }
+    testID="number-settings-input-text-input"
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

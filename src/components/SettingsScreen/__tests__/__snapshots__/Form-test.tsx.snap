@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form renders settings form: Form-settings 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "padding": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontWeight": "200",
+        }
+      }
+    >
+      Annoy from hour
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      defaultValue="10"
+      keyboardType="number-pad"
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "borderBottomWidth": 1,
+          },
+          Object {
+            "borderBottomColor": "#c8e6c9",
+          },
+        ]
+      }
+      testID="number-settings-input-text-input"
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontWeight": "200",
+        }
+      }
+    >
+      Annoy till hour
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      defaultValue="23"
+      keyboardType="number-pad"
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "borderBottomWidth": 1,
+          },
+          Object {
+            "borderBottomColor": "#c8e6c9",
+          },
+        ]
+      }
+      testID="number-settings-input-text-input"
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontWeight": "200",
+        }
+      }
+    >
+      Annoys frequency
+    </Text>
+    <TextInput
+      allowFontScaling={true}
+      defaultValue="45"
+      keyboardType="number-pad"
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "borderBottomWidth": 1,
+          },
+          Object {
+            "borderBottomColor": "#c8e6c9",
+          },
+        ]
+      }
+      testID="number-settings-input-text-input"
+      underlineColorAndroid="transparent"
+    />
+  </View>
+</View>
+`;

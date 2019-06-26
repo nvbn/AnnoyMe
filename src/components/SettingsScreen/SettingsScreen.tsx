@@ -20,7 +20,9 @@ const SettingsScreen = () => {
     return <Loading />;
   }
 
-  return <Form onChange={setSettings} settings={settings} />;
+  return (
+    <Form onChange={setSettings} settings={settings} testID="settings-form" />
+  );
 };
 
 SettingsScreen.navigationOptions = {
